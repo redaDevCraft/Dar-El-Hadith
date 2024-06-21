@@ -2,19 +2,21 @@
 
     <!-- Hero Section -->
     <div class="flex flex-col justify-center items-center md:space-y-16 space-y-9 mt-2 md:m-10 m-6 rounded-lg md:py-[20%] h-60 bg-cover bg-center bg-no-repeat"
-        style="background-image: url('images/nabda.svg');">
+        style="background-image: url('images/OpenDay3.jpg');">
         <h3 class="font-bold text-2xl md:text-6xl text-white text-center">
             دار الحديث بتلمسان..مهد العلماء و معقل الشهداء
         </h3>
-        <button
-            class="md:mr-[60%] bg-white text-emerald-900  text-nowrap font-bold p-2 md:p-3   md:text-2xl  md:w-[10%] w-[20%] rounded-md hover:bg-green-700 duration-200">
-            <a href="/history"> اقرأ المزيد
+        <button class="bg-green-700 text-white  hover:bg-white hover:text-emerald-900 border-2  text-nowrap font-bold p-2 md:p-3 rounded-lg  md:text-2xl  max-md:1/2  md:w-auto 
+             duration-500">
+            <a href="/history"> تعرف على دار الحديث
 
             </a>
         </button>
     </div>
 
-    <!-- Latest News Section -->
+    <h2 class="text-center bg-gray-200 rounded-md m-6 p-4 font-bold text-3xl font-serif text-green-900"> أخبار دار
+        الحديث</h2>
+
 
 
     <!-- Carousel -->
@@ -94,11 +96,15 @@
         </div>
     </div> -->
 
+    <!-- <h2 class="text-center bg-gray-200 rounded-md m-6 p-4 font-bold text-3xl font-serif text-green-900">
+        مؤسس دار الحديث</h2>
+
     <div class="bg-gray-100 flex flex-col justify-center md:flex-row rounded-md border-2 border-green-800 md:m-10 m-6">
         <img src="images/ibrahimi.svg" class="m-4 md:h-96">
-        <div dir="rtl" class="flex flex-col justify-center md:justify-evenly space-y-5 md:space-y-9 font-serif m-6">
-            <div class=" font-bold text-2xl text-green-950 md:text-5xl">الشيخ البشير الإبراهيمي</div>
-            <div class="md:text-4xl text-green-950 font-sans">محمد البشير الإبراهيمي (1889-1965 م)الموافق (1306 هـ -1385
+        <div dir="rtl" class="flex flex-col justify-center md:justify-evenly space-y-6  font-serif m-6">
+            <div class=" font-bold text-2xl text-green-900 md:text-5xl">الشيخ البشير الإبراهيمي</div>
+            <div class="md:text-4xl text-green-950 font-sans">محمد البشير الإبراهيمي (1889-1965 م)الموافق
+                (1306 هـ -1385
                 هـ) من
                 أعلام الفكر
                 والأدب
@@ -109,22 +115,74 @@
                 عليه
                 أكثر</a>
         </div>
-    </div>
+    </div> -->
 
+    <h2 id="marafiq"
+        class="text-center overflow: auto bg-gray-200 rounded-md m-6 p-4 font-bold text-3xl font-serif text-green-900">
+        مرافق دار
+        الحديث</h2>
 
     <div
         class="bg-gray-100 flex flex-col-reverse justify-center md:flex-row rounded-md border-2 border-green-800 md:m-10 m-6">
         <div dir="rtl" class="flex flex-col justify-center md:justify- space-y-5 md:space-y-9 font-serif m-6">
             <div class="font-bold text-2xl text-green-950 md:text-4xl">المدرسة التحضيرية </div>
-            <div class="md:text-4xl font-sans">تقع في الطابق الثاني من مؤسسة دار الحديث، تعتبر مكانًا مثاليًا لتعليم
-                ورعاية
-                الأطفال الصغار. تمتد هذه
-                الروضة عبر مساحة واسعة. تهدف إلى تحقيق تطوير شامل للأطفال، من خلال توفير بيئة تعليمية محفزة تعزز نموهم
-                الفكري والاجتماعي والديني. بإشراف معلمين متخصصين .
+            <div class="md:text-4xl font-sans">
+                تستقبل المدرسة الأطفال الصغار البالغين من العمر أربع سنوات، وخمس سنوات، وأكثر، ويمتاز البرنامج السنوي
+                بالطابع الديني والتركيز على القرآن الكريم والحديث الشريف والآداب الإسلامية بالإضافة الى مواد الحساب و
+                مادة المحادثة المستوحاة من واقع التلميذ الاجتماعي والأسري.
+
             </div>
         </div>
-        <img src="images/drhHouse.svg" class=" p-4 h-96">
+        <img src="images/OpenDay3.jpg" class=" p-4 h-96">
     </div>
+
+    <div
+        class="bg-gray-100 flex flex-col-reverse justify-center md:flex-row rounded-md border-2 border-green-800 md:m-10 m-6">
+        <div dir="rtl" class="flex flex-col justify-center md:justify- space-y-5 md:space-y-9 font-serif m-6">
+            <div class="font-bold text-2xl text-green-950 md:text-4xl">المصلى </div>
+            <div class="md:text-4xl font-sans">
+                يقع في الطابق الأرضي , تقام فيه الصلوات الخمس , صلاة الجمعة من طرف الشيخ بن يونس آيت سالم و صلاة
+                التراويح في رمضان بالإضافة إلى العديد من الأنشطة مثل حلقات تلاوة القرآن الكريم و دروس خفيفة من طرف
+                أساتذة وشيوخ لتزكية النفوس و هز القلوب
+
+            </div>
+        </div>
+        <img src="images/OpenDay3.jpg" class=" p-4 h-96">
+    </div>
+
+    <div
+        class="bg-gray-100 flex flex-col-reverse justify-center md:flex-row rounded-md border-2 border-green-800 md:m-10 m-6">
+        <div dir="rtl" class="flex flex-col justify-center md:justify- space-y-5 md:space-y-3 font-serif m-6">
+            <div class="font-bold text-2xl text-green-950 md:text-4xl">المكتبة </div>
+            <div class="md:text-3xl font-sans">تقع في الطابق الأول، وتحتوي على حوالي خمسة آلاف كتاب في مجالات دينية
+                متنوعة كالتفسير، الفقه، والعقيدة، بالإضافة إلى كتب الحركة الإصلاحية واللغة العربية. تضم المكتبة أيضًا
+                مخطوطات قيمة مثل مخطوطة المصحف الشريف وصحيح البخاري. تحتوي المكتبة على قاعة للمطالعة، قاعة محاضرات و
+                مكان للإعلام الآلي مزودة بالإنترنت. تقدم المكتبة دروس دعم ودورات تكوينية في الإعلام الآلي، وتفتح أبوابها
+                يومياً من 9 صباحاً حتى 5 مساءا
+
+            </div>
+        </div>
+        <img src="images/OpenDay3.jpg" class=" p-4 h-96">
+    </div>
+
+    <div
+        class="bg-gray-100 flex flex-col-reverse justify-center md:flex-row rounded-md border-2 border-green-800 md:m-10 m-6">
+        <div dir="rtl" class="flex flex-col justify-center md:justify- space-y-5 md:space-y-6 font-serif m-6">
+            <div class="font-bold text-2xl text-green-950 md:text-4xl"> المدرسة القرآنية
+            </div>
+            <div class="md:text-2xl font-sans">
+                تم افتتاح المدرسة القرآنية لدار الحديث بقاعة النساء بالطابق السفلي في مارس 1996 من قبل الجمعية الدينية
+                والثقافية والعلمية. تطوع الشيخ محمد بوكلي حسن، حفيد الشيخ بوشناق، لتعليم القرآن فيها. يعمل محمد الآن
+                محاسبًا، وشارك معه في التدريس عبد الحكيم مير والبشير مرابط وعبد الإله عراوي. تفتح المدرسة أبوابها بعد
+                صلاة العصر حتى العشاء للعاملين، وفي أوقات أخرى لغير العاملين. تشهد المدرسة إقبالاً متزايداً من مختلف
+                الأعمار، حتى أن القاعة تضيق أحياناً بهم. توفر الجمعية التدفئة والتكييف وتكرم الطلبة. تخرج العديد من
+                الطلبة الذين يحفظون القرآن ويؤمون الناس في الصلوات بالمدينة.
+
+            </div>
+        </div>
+        <img src="images/OpenDay3.jpg" class=" p-4 h-96">
+    </div>
+
 </div>
 
 
@@ -163,11 +221,19 @@ document.addEventListener('DOMContentLoaded', function() {
             const targetElement = document.querySelector(targetId);
 
             if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop -
-                        100, // Adjust offset as needed
-                    behavior: 'smooth'
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
                 });
+
+                // Adjust scroll position to account for fixed navbar or offset
+                setTimeout(() => {
+                    const scrollY = window.scrollY;
+                    window.scroll({
+                        top: scrollY - 100,
+                        behavior: 'smooth'
+                    });
+                }, 500); // Adjust delay as necessary
             }
         });
     });

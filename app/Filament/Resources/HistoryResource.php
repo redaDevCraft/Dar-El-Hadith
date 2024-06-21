@@ -34,7 +34,8 @@ class HistoryResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
     
-    protected static ?string $navigationLabel = 'History';
+    protected static ?string $navigationLabel = 'التاريخ';
+    
 
 
 
@@ -48,8 +49,8 @@ class HistoryResource extends Resource
                     ->maxLength(255),
                 Forms\Components\TextInput::make('subtitle')
                      ->translateLabel() 
-                    ->required()
-                    ->maxLength(1000),
+                     ->required()
+                     ->maxLength(5000),
                 Forms\Components\TextInput::make('user_id')
                     ->translateLabel()
                      ->default(

@@ -10,7 +10,12 @@ export default {
 
     ],
      theme: {
-      extend: {},
+      extend: {
+        maxWidth: {
+        '70vw': '70vw',
+      },
+
+      },
     },
     plugins: [
         require('flowbite/plugin')

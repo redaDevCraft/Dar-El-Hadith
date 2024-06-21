@@ -22,11 +22,11 @@
     "Created until": "تم الانشاء حتى تاريخ",
     "Filters": "فلتر",
     "Total news": "اجمالي الاخبار" ,
-    "Total users": "اجمالي المستخدمين",
+    "Total Admins": "اجمالي المشرفين",
     "History": "التاريخ",
     "history": "التاريخ",
     "All news in the database": "جميع الاخبار في قاعدة البيانات",
-    "All users in the database": "جميع المستخدمين في قاعدة البيانات",
+    "All Admins in the database": " جميع المشرفين في قاعدة البيانات",
     "Subtitle": "العنوان الفرعي"
 }
 

@@ -16,8 +16,8 @@ class NewsOverview extends BaseWidget
             Stat::make(__('Total news'), News::count()) // Translate "Total news" using __() helper
               ->description(__('All news in the database'))
             ->descriptionIcon('heroicon-m-newspaper'),
-            Stat::make(__('Total users'), User::count()) // Translate "Total users" using __() helper
-            ->description(__('All users in the database'))
+            Stat::make(__('Total Admins'), User::count()) // Translate "Total users" using __() helper
+            ->description(__('All Admins in the database'))
             ->descriptionIcon('heroicon-m-user-group'),
         
         ];

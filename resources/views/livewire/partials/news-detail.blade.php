@@ -63,66 +63,76 @@
                 </div>
             </div>
         </div>
-        <div id="news-content" class="col-md-12 ">
-            <h1 class="text-3xl font-bold text-center mt-9" id="news-title">{{ $news->title }}</h1>
-            <div class="prose md:prose-p:w-[232%] md:prose-p:text-justify md:prose-headings:w-[230%] mt-9 ">
-                {!! \Illuminate\Support\Str::markdown($news->content) !!}
-            </div>
-        </div>
-    </div>
-
-    <!-- Additional News Section -->
-    <div class="container mx-auto my-12 px-4">
-        <h2 class="text-2xl font-bold mb-4 text-right">أخبار إضافية</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            @foreach($additionalNews as $additional)
-            <div class="bg-gray-100 rounded-lg p-4">
-                <h3 id="additional-news" class="text-xl font-bold mb-2">{{ $additional->title }}</h3>
-                <div dir="rtl">
-                    <a id="read-more" href="/news/{{ $additional->id }}"
-                        class="text-green-600 font-bold hover:underline">اقرأ
-                        المزيد</a>
+        <div class="md:flex flex-col md:flex-row-reverse md:justify-between mt-6 relative">
+            <div class="prose  mt-3 md:overflow-y-auto md:pr-8 md:max-w-70vw text-2xl md:text-3xl">
+                <h1 class="text-3xl font-bold text-center mt-9" id="news-title">{{ $news->title }}</h1>
+                <div id="news-content" class="prose  mt-9 text-2xl ">
+                    {!! \Illuminate\Support\Str::markdown($news->content) !!}
                 </div>
-
             </div>
-            @endforeach
+            <div class=" h-screen overflow-auto mt-12 md:mt-0 bg-gray-50 sticky top-0">
+                <aside class="px-4 mt-12 md:mt-0" dir="rtl">
+                    <div class="">
+                        <h2 class="text-2xl font-bold mb-4 text-right">أخبار إضافية</h2>
+                        <div class="flex flex-col gap-8">
+                            @if(isset($additionalNews) && is_iterable($additionalNews))
+                            @foreach($additionalNews as $additional)
+                            <div class="bg-gray-100 rounded-lg p-4">
+                                <h3 id="additional-news" class="text-xl font-bold mb-2">{{ $additional->title }}</h3>
+                                <div dir="rtl">
+                                    <a id="read-more" href="/news/{{ $additional->id }}"
+                                        class="text-green-600 font-bold hover:underline">اقرأ المزيد</a>
+                                </div>
+                            </div>
+                            @endforeach
+                            @else
+                            <div class="bg-gray-100 rounded-lg p-4">
+                                <h3 id="additional-news" class="text-xl font-bold mb-2">No additional news available
+                                </h3>
+                            </div>
+                            @endif
+                        </div>
+                    </div>
+                </aside>
+            </div>
         </div>
+
+
+
     </div>
 
-</div>
-
-<script>
-function isArabic(text) {
-    const arabicPattern = /[\u0600-\u06FF]/;
-    return arabicPattern.test(text);
-}
-
-document.addEventListener("DOMContentLoaded", function() {
-    const newsTitle = document.getElementById('news-title');
-    const newsContent = document.getElementById('news-content');
-    const mainDiv = document.getElementById('main-div');
-    const additionalNews = document.getElementById('additional-news');
-    const readMore = document.getElementById('read-more');
-
-    if (isArabic(newsTitle.innerText)) {
-        newsTitle.setAttribute('dir', 'rtl');
-    } else {
-        newsTitle.setAttribute('dir', 'ltr');
+    <script>
+    function isArabic(text) {
+        const arabicPattern = /[\u0600-\u06FF]/;
+        return arabicPattern.test(text);
     }
 
-    if (isArabic(newsContent.innerText)) {
-        newsContent.setAttribute('dir', 'rtl');
+    document.addEventListener("DOMContentLoaded", function() {
+        const newsTitle = document.getElementById('news-title');
+        const newsContent = document.getElementById('news-content');
+        const mainDiv = document.getElementById('main-div');
+        const additionalNews = document.getElementById('additional-news');
+        const readMore = document.getElementById('read-more');
 
-    } else {
-        newsContent.setAttribute('dir', 'ltr');
+        if (isArabic(newsTitle.innerText)) {
+            newsTitle.setAttribute('dir', 'rtl');
+        } else {
+            newsTitle.setAttribute('dir', 'ltr');
+        }
 
-    }
+        if (isArabic(newsContent.innerText)) {
+            newsContent.setAttribute('dir', 'rtl');
 
-    if (isArabic(additionalNews.innerText)) {
-        additionalNews.setAttribute('dir', 'rtl');
-    } else {
-        additionalNews.setAttribute('dir', 'ltr');
-    }
+        } else {
+            newsContent.setAttribute('dir', 'ltr');
 
-});
-</script>
+        }
+
+        if (isArabic(additionalNews.innerText)) {
+            additionalNews.setAttribute('dir', 'rtl');
+        } else {
+            additionalNews.setAttribute('dir', 'ltr');
+        }
+
+    });
+    </script>

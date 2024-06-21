@@ -37,7 +37,7 @@ class NewsResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-newspaper';
 
-    protected static ?string $navigationLabel = 'News';
+    protected static ?string $navigationLabel = 'الأخبار';
 
 
     public static function form(Form $form): Form
@@ -141,7 +141,7 @@ class NewsResource extends Resource
                      ->translateLabel(),
             ])
             ->actions([
-                ActionGroup::make([
+                // ActionGroup::make([
                     ViewAction::make('view')
                         ->translateLabel()
                         ->color('gray')
@@ -151,7 +151,7 @@ class NewsResource extends Resource
                     EditAction::make('edit')
                         ->icon('heroicon-o-pencil')
                         ->color('primary')
-                ])
+                // ])
 
 
             ])
