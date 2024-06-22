@@ -1,6 +1,36 @@
 <div class="relative">
 
-    <!-- Hero Section -->
+    <div class="font-sans text-white rounded-lg md:m-10 m-6" style="background-image: url('images/OpenDay3.jpg');
+    background-size: cover">
+
+        <div class="flex flex-col p-4 rounded-lg shadow-lg">
+            <div
+                class="flex flex-col-reverse text-right  md:flex-row-reverse justify-center gap-4 font-bold text-2xl font-sans">
+                <div>
+                    |
+                    مواقيت
+                    الصلاة
+                </div>
+                <div>
+                    {{ $currentDate }} | {{ $hijriDate }}
+                </div>
+
+            </div>
+            @if($prayerTimes)
+            <div dir="rtl" class="flex flex-col md:flex-row ">
+                @foreach (['Fajr', 'Dhuhr', 'Asr', 'Maghrib', 'Isha'] as $prayer)
+                <div class="flex justify-evenly w-full text-2xl border-b border-spacing-7 p-2">
+                    <span class="font-bold">{{ $prayerLabels[$prayer] ?? $prayer }}</span>
+                    <span>{{ $prayerTimes['timings'][$prayer] ?? 'N/A' }}</span>
+                </div>
+                @endforeach
+            </div>
+            @else
+            <p class="text-center">مواقيت الصلاة غير متوفرة</p>
+            @endif
+        </div>
+    </div>
+
     <div class="flex flex-col justify-center items-center md:space-y-16 space-y-9 mt-2 md:m-10 m-6 rounded-lg md:py-[20%] h-60 bg-cover bg-center bg-no-repeat"
         style="background-image: url('images/OpenDay3.jpg');">
         <h3 class="font-bold text-2xl md:text-6xl text-white text-center">
@@ -14,7 +44,10 @@
         </button>
     </div>
 
-    <h2 class="text-center bg-gray-200 rounded-md m-6 p-4 font-bold text-3xl font-serif text-green-900"> أخبار دار
+
+
+
+    <h2 class="text-center bg-gray-200 rounded-md m-9 p-4 font-bold text-3xl font-serif text-green-900"> أخبار دار
         الحديث</h2>
 
 

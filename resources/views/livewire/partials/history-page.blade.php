@@ -4,7 +4,7 @@
         @foreach ($history as $item)
         <div>
             <div class="md:space-y-16 space-y-9 mt-2 p-4 md:p-7 py-[20%] md:py-[20%] rounded-lg"
-                style="background-image: url('images/nabda.svg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+                style="background-image: url('images/OpenDay3.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
                 <h1 id="news-title" class="font-bold text-2xl md:text-6xl text-white text-center text-nowrap">
                     {{$item->title}}
                 </h1>
@@ -17,7 +17,12 @@
             <div class="prose  mt-3 md:overflow-y-auto md:pr-8 md:max-w-70vw text-2xl md:text-3xl">
                 <div id="news-content" class="custom-scrollbar select-none">
                     {!! \Illuminate\Support\Str::markdown($item->content) !!}
+                    <button id="scroll-to-top"
+                        class="fixed bottom-10 right-10 bg-green-600 text-white px-3 py-1 rounded-full hidden ">
+                        ↑
+                    </button>
                 </div>
+
             </div>
             <div class=" h-screen overflow-auto bg-gray-50  sticky top-0">
                 <aside class="px-4 mt-12 md:mt-0" dir="rtl">
@@ -41,6 +46,7 @@
                             </div>
                             @endif
                         </div>
+
                     </div>
                 </aside>
             </div>
@@ -98,6 +104,22 @@
         } else {
             newsSubtitle.setAttribute('dir', 'ltr');
         }
+        const scrollToTopButton = document.getElementById('scroll-to-top');
+
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 200) {
+                scrollToTopButton.classList.remove('hidden');
+            } else {
+                scrollToTopButton.classList.add('hidden');
+            }
+        });
+
+        scrollToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
     });
     </script>
 </div>

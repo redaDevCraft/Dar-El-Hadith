@@ -1,4 +1,4 @@
-<div class="m-6 " id="main-div">
+<div class="m-6" id="main-div">
     <div class="row">
         <div>
             <div id="custom-controls-gallery" class="relative mx-[10%] border-2 rounded-md" data-carousel="slide">
@@ -6,7 +6,7 @@
                 <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
                     <!-- Carousel items -->
                     @foreach($news->images as $image)
-                    <div class="hidden duration-700 ease-in-out bg-gradient-to-t from-green-900  to-green-100"
+                    <div class="hidden duration-700 ease-in-out bg-gradient-to-t from-green-900 to-green-100"
                         data-carousel-item>
                         @if($news->images)
                         <div class="mt-2 flex flex-wrap">
@@ -14,8 +14,6 @@
                                 class="absolute block max-w-full max-h-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                         </div>
                         @elseif (!(isset($news->images)))
-
-
                         <div class="mt-2 flex flex-wrap">
                             <p>no image</p>
                             <script>
@@ -27,7 +25,6 @@
                             </script>
                         </div>
                         @endif
-
                     </div>
                     @endforeach
                 </div>
@@ -64,13 +61,13 @@
             </div>
         </div>
         <div class="md:flex flex-col md:flex-row-reverse md:justify-between mt-6 relative">
-            <div class="prose  mt-3 md:overflow-y-auto md:pr-8 md:max-w-70vw text-2xl md:text-3xl">
+            <div class="prose mt-3 md:overflow-y-auto md:pr-8 md:max-w-70vw text-2xl md:text-3xl">
                 <h1 class="text-3xl font-bold text-center mt-9" id="news-title">{{ $news->title }}</h1>
-                <div id="news-content" class="prose  mt-9 text-2xl ">
+                <div id="news-content" class="prose mt-9 text-2xl">
                     {!! \Illuminate\Support\Str::markdown($news->content) !!}
                 </div>
             </div>
-            <div class=" h-screen overflow-auto mt-12 md:mt-0 bg-gray-50 sticky top-0">
+            <div class="h-screen overflow-auto mt-12 md:mt-0 bg-gray-50 sticky top-0">
                 <aside class="px-4 mt-12 md:mt-0" dir="rtl">
                     <div class="">
                         <h2 class="text-2xl font-bold mb-4 text-right">أخبار إضافية</h2>
@@ -97,8 +94,10 @@
             </div>
         </div>
 
-
-
+        <!-- Scroll to Top Button -->
+        <button id="scroll-to-top" class="fixed bottom-10 right-10 bg-green-600 text-white p-2 rounded-full ">
+            ↑
+        </button>
     </div>
 
     <script>
@@ -110,9 +109,8 @@
     document.addEventListener("DOMContentLoaded", function() {
         const newsTitle = document.getElementById('news-title');
         const newsContent = document.getElementById('news-content');
-        const mainDiv = document.getElementById('main-div');
-        const additionalNews = document.getElementById('additional-news');
-        const readMore = document.getElementById('read-more');
+        const additionalNews = document.querySelectorAll('#additional-news');
+        const readMore = document.querySelectorAll('#read-more');
 
         if (isArabic(newsTitle.innerText)) {
             newsTitle.setAttribute('dir', 'rtl');
@@ -122,17 +120,42 @@
 
         if (isArabic(newsContent.innerText)) {
             newsContent.setAttribute('dir', 'rtl');
-
         } else {
             newsContent.setAttribute('dir', 'ltr');
-
         }
 
-        if (isArabic(additionalNews.innerText)) {
-            additionalNews.setAttribute('dir', 'rtl');
-        } else {
-            additionalNews.setAttribute('dir', 'ltr');
-        }
+        additionalNews.forEach(news => {
+            if (isArabic(news.innerText)) {
+                news.setAttribute('dir', 'rtl');
+            } else {
+                news.setAttribute('dir', 'ltr');
+            }
+        });
 
+        readMore.forEach(link => {
+            if (isArabic(link.innerText)) {
+                link.setAttribute('dir', 'rtl');
+            } else {
+                link.setAttribute('dir', 'ltr');
+            }
+        });
+
+        const scrollToTopButton = document.getElementById('scroll-to-top');
+
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 200) {
+                scrollToTopButton.classList.remove('hidden');
+            } else {
+                scrollToTopButton.classList.add('hidden');
+            }
+        });
+
+        scrollToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
     });
     </script>
+</div>
