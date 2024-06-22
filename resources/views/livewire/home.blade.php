@@ -5,7 +5,7 @@
 
         <div class="flex flex-col p-4 rounded-lg shadow-lg">
             <div
-                class="flex flex-col-reverse text-right  md:flex-row-reverse justify-center gap-4 font-bold text-2xl font-sans">
+                class="flex flex-col-reverse text-right  md:flex-row-reverse justify-center gap-4 font-bold text-xl font-sans">
                 <div>
                     |
                     مواقيت
