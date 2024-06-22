@@ -53,17 +53,17 @@
 
 
     <!-- Carousel -->
-    <div class="flex flex-col md:m-10 m-6 ">
-        <div id="default-carousel" class="relative  w-full " data-carousel="slide">
+    <div class="flex flex-col md:m-10 m-6">
+        <div id="default-carousel" class="relative w-full " data-carousel="slide">
 
             <!-- Carousel wrapper -->
-            <div class="relative  overflow-hidden rounded-lg h-screen border-2">
+            <div class="relative  overflow-hidden rounded-lg md:h-screen h-96  border-2">
                 @foreach ($news as $item)
                 <div id="carousel-wrapper"
                     class=" flex flex-col justify-between items-center content-center bg-green-500  {{ !empty($item->images) ? 'absolute  w-full h-full  hidden duration-1000 ease-in-out' : ' hidden    duration-1000 ease-in-out' }}"
                     data-carousel-item style="background-image: url('{{ !empty($item->images) ? asset('storage/' . $item->images[0]) : asset('images/LargeLogo.svg') }}'); 
                         background-repeat: no-repeat;
-                        background-size: {{ !empty($item->images) ? 'contain' : 'auto' }}; 
+                        background-size: {{ !empty($item->images) ? 'cover' : 'auto' }}; 
                         background-position: center;
                         ">
 
