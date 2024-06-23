@@ -60,22 +60,28 @@
                 </div>
             </div>
         </div>
+
         <div class="md:flex flex-col md:flex-row-reverse md:justify-between mt-6 relative">
-            <div class="prose mt-3 md:overflow-y-auto md:pr-8 md:max-w-70vw text-2xl md:text-3xl">
-                <h1 class="text-3xl font-bold text-center mt-9" id="news-title">{{ $news->title }}</h1>
+
+            <div class=" mt-3 md:overflow-y-auto text-right  text-2xl md:text-3xl">
+                <h1 class="text-3xl font-serif text-green-900 text-center mt-9" id="news-title">{{ $news->title }}</h1>
+
                 <div id="news-content" class="prose mt-9 text-2xl">
                     {!! \Illuminate\Support\Str::markdown($news->content) !!}
                 </div>
             </div>
-            <div class="h-screen overflow-auto mt-12 md:mt-0 bg-gray-50 sticky top-0">
-                <aside class="px-4 mt-12 md:mt-0" dir="rtl">
+            <div class=" h-screen overflow-auto  mt-16  sticky top-0 md:mr-48 border-r-2">
+                <aside class="px-4 overflow-auto md:mt-0" dir="rtl">
+                    <h2 class="text-3xl font-bold  mb-4 text-right">أخبار إضافية</h2>
+
                     <div class="">
-                        <h2 class="text-2xl font-bold mb-4 text-right">أخبار إضافية</h2>
-                        <div class="flex flex-col gap-8">
-                            @if(isset($additionalNews) && is_iterable($additionalNews))
-                            @foreach($additionalNews as $additional)
-                            <div class="bg-gray-100 rounded-lg p-4">
+                        <div class="flex flex-col gap-3  mt-5">
+                            @if(isset($featuredNews) && is_iterable($featuredNews))
+                            @foreach($featuredNews as $additional)
+                            <div class="border-t-2 border-b-2 p-4">
                                 <h3 id="additional-news" class="text-xl font-bold mb-2">{{ $additional->title }}</h3>
+                                <p>{{ \Carbon\Carbon::parse($item->created_at)->format('Y-m-d') }}</p>
+
                                 <div dir="rtl">
                                     <a id="read-more" href="/news/{{ $additional->id }}"
                                         class="text-green-600 font-bold hover:underline">اقرأ المزيد</a>
@@ -89,13 +95,15 @@
                             </div>
                             @endif
                         </div>
+
                     </div>
                 </aside>
             </div>
         </div>
 
         <!-- Scroll to Top Button -->
-        <button id="scroll-to-top" class="fixed bottom-10 right-10 bg-green-600 text-white p-2 rounded-full ">
+        <button id="scroll-to-top"
+            class=" hover:bg-emerald-400 fixed bottom-10 right-10 bg-green-600 text-white px-3 py-1 rounded-full hidden ">
             ↑
         </button>
     </div>

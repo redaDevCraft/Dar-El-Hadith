@@ -18,21 +18,23 @@
                 <div id="news-content" class="custom-scrollbar select-none">
                     {!! \Illuminate\Support\Str::markdown($item->content) !!}
                     <button id="scroll-to-top"
-                        class="fixed bottom-10 right-10 bg-green-600 text-white px-3 py-1 rounded-full hidden ">
+                        class=" hover:bg-emerald-400 fixed bottom-10 right-10 bg-green-600 text-white px-3 py-1 rounded-full hidden ">
                         ↑
                     </button>
                 </div>
 
             </div>
-            <div class=" h-screen overflow-auto bg-gray-50  sticky top-0">
+            <div class=" md:h-screen overflow-auto  sticky top-0">
                 <aside class="px-4 mt-12 md:mt-0" dir="rtl">
                     <div class="">
-                        <h2 class="text-2xl font-bold mb-4 text-right">أخبار إضافية</h2>
-                        <div class="flex flex-col gap-8">
-                            @if(isset($news) && is_iterable($news))
-                            @foreach($news as $additional)
-                            <div class="bg-gray-100 rounded-lg p-4">
+                        <h2 class="text-3xl font-sans  mb-4 text-right">أخبار إضافية</h2>
+                        <div class="flex flex-col gap-3  mt-5">
+                            @if(isset($featuredNews) && is_iterable($featuredNews))
+                            @foreach($featuredNews as $additional)
+                            <div class="border-t-2 border-b-2 p-4">
                                 <h3 id="additional-news" class="text-xl font-bold mb-2">{{ $additional->title }}</h3>
+                                <p>{{ \Carbon\Carbon::parse($item->created_at)->format('Y-m-d') }}</p>
+
                                 <div dir="rtl">
                                     <a id="read-more" href="/news/{{ $additional->id }}"
                                         class="text-green-600 font-bold hover:underline">اقرأ المزيد</a>

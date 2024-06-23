@@ -16,31 +16,31 @@
 
                 <li>
                     <a href="/admin"
-                        class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-700 md:p-1 dark:text-white md:dark:hover:text-green-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">لوحة
+                        class="block py-2 px-3 hover:shadow-sm text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-700 md:p-1 dark:text-white md:dark:hover:text-green-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">لوحة
                         التحكم</a>
                 </li>
                 <li>
                     <a href="/#marafiq"
-                        class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-700 md:p-1 dark:text-white md:dark:hover:text-green-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">المرافق</a>
+                        class="block py-2 px-3 hover:shadow-sm text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-700 md:p-1 dark:text-white md:dark:hover:text-green-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">المرافق</a>
                 </li>
                 <li>
                     <a href="/#default-carousel"
-                        class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-700 md:p-1 dark:text-white md:dark:hover:text-green-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">الأخبار</a>
+                        class="block py-2 px-3 hover:shadow-sm text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-700 md:p-1 dark:text-white md:dark:hover:text-green-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">الأخبار</a>
                 </li>
                 <li>
                     <a href="/history"
-                        class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-700 md:p-1 dark:text-white md:dark:hover:text-green-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">التاريــخ</a>
+                        class="block py-2 px-3 hover:shadow-sm text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-700 md:p-1 dark:text-white md:dark:hover:text-green-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">التاريــخ</a>
                 </li>
                 <li>
                     <a href="/"
-                        class="block py-2 px-3 text-white bg-green-900 rounded  md:text-white  md:p-1 dark:text-white md:dark:text-green-500"
+                        class="block py-2 px-3 text-white bg-green-900  hover:bg-emerald-600 animate duration-300 rounded  md:text-white  md:p-1 dark:text-white md:dark:text-green-500"
                         aria-current="page">الرئيسية</a>
                 </li>
 
 
             </ul>
         </div>
-        <a href="/" class="flex items-center space-x-3 ">
+        <a href="/" class="flex items-center space-x-3 hover:animate-pulse ">
             <img src="{{ asset('images/SmallLogo.svg') }}" alt="دار الحديث" class="h-12 mb-3">
         </a>
     </div>

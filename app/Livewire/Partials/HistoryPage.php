@@ -9,13 +9,14 @@ use App\Models\news;
 class HistoryPage extends Component
 {
     public $history;
+    public $featuredNews;
+
     public $news;
     public function mount()
     {
         $this->history = History::all();
-        $this->news = news::orderBy('created_at', 'desc')
-        ->limit(5)
-        ->get();
+        $this->featuredNews = news::latest()->take(5)->get(); // Fetch 3 latest items
+
 
     }
 

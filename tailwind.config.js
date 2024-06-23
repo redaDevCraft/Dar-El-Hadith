@@ -11,8 +11,17 @@ export default {
     ],
      theme: {
       extend: {
-        maxWidth: {
+         maxWidth: {
         '70vw': '70vw',
+      },
+       keyframes: {
+        popUp: {
+          '0%': { opacity: 0, transform: 'scale(0.5)' },
+          '100%': { opacity: 1, transform: 'scale(1)' },
+        },
+      },
+      animation: {
+        popUp: 'popUp 0.5s ease-out forwards',
       },
 
       },

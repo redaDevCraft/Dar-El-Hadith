@@ -8,15 +8,13 @@ use App\Models\news;
 class NewsDetail extends Component
 {
     public $news;
-    public $additionalNews;
+    public $featuredNews;
 
     public function mount($id)
     {
         $this->news = news::find($id);
-        $this->additionalNews = news::where('id', '!=', $id)
-        ->latest('created_at')
-        ->limit(5)
-        ->get();
+        $this->featuredNews = news::latest()->take(5)->get(); // Fetch 3 latest items
+
 
     }
 

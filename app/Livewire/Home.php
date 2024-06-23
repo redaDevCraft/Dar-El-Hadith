@@ -3,13 +3,19 @@
 namespace App\Livewire;
 
 use Livewire\Component;
+use Livewire\WithPagination;
 use App\Models\news;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Http;
 
+
 class Home extends Component
 {
+    use WithPagination;
+
     public $news;
+    public $featuredNews;
+    public $page = 1; // Track the current page
     public $currentSlide = 0;
     public $prayerTimes;
     public $currentDate;
@@ -33,11 +39,14 @@ class Home extends Component
 
     public function mount()
     {
-        $this->news = news::all();
+        $this->news = collect(); 
+        $this->featuredNews = news::latest()->take(5)->get(); // Fetch 3 latest items
         $this->currentDate = Carbon::now()->format('d-m-Y');
         $this->fetchPrayerTimes();
         $this->hijriDate = $this->getHijriDate($this->currentDate);
         $this->prayerLabels;
+        $this->loadMore(); // Load the initial set of news items
+
     }
 
      public function getHijriDate($date)
@@ -82,8 +91,16 @@ class Home extends Component
             $data = $response->json()['data'];
             $this->prayerTimes = collect($data)->firstWhere('date.gregorian.day', $day);
         } else {
-            $this->prayerTimes = [];
+            $this->prayerTimes = null;
         }
+    }
+    
+      public function loadMore()
+    {
+        $newsItems = news::latest()->inRandomOrder()
+        ->paginate(5, ['*'], 'page', $this->page); // Fetch 5 latest items per page
+        $this->news = $this->news->concat($newsItems->items()); // Concatenate new items
+        $this->page++; 
     }
 
     public function render()
