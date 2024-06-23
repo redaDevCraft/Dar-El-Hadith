@@ -130,13 +130,15 @@
                                 <div dir="rtl" class="flex flex-col">
 
                                     <div class="space-y-2">
-                                        <h3 id="additional-news" class="text-xl font-bold  ">{{ $additional->title }}
+                                        <h3 id="additional-news"
+                                            class="text-xl font-bold text-ellipsis overflow-hidden line-clamp-1 ">
+                                            {{ $additional->title }}
                                         </h3>
-                                        <p>{{ \Carbon\Carbon::parse($item->created_at)->format('Y-m-d') }}</p>
+                                        <p>{{ \Carbon\Carbon::parse($additional->created_at)->format('Y-m-d') }}</p>
                                     </div>
 
                                     <a id="read-more" href="/news/{{ $additional->id }}"
-                                        class="text-green-600 font-bold text-2xl underline">اقرأ المزيد</a>
+                                        class="text-green-600 font-bold text-lg underline">اقرأ المزيد</a>
                                 </div>
                                 <div>
                                     <img src="{{ $imagePath }}" alt="News Image" class="rounded-md w-24 h-20 border-2">

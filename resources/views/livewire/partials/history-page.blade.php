@@ -33,7 +33,7 @@
                             @foreach($featuredNews as $additional)
                             <div class="border-t-2 border-b-2 p-4">
                                 <h3 id="additional-news" class="text-xl font-bold mb-2">{{ $additional->title }}</h3>
-                                <p>{{ \Carbon\Carbon::parse($item->created_at)->format('Y-m-d') }}</p>
+                                <p>{{ \Carbon\Carbon::parse($additional->created_at)->format('Y-m-d') }}</p>
 
                                 <div dir="rtl">
                                     <a id="read-more" href="/news/{{ $additional->id }}"
