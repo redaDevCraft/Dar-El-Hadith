@@ -1,12 +1,12 @@
 <div class="relative ">
+
     <div class="font-sans  animate-popUp  text-white rounded-lg md:m-10 m-6" style="background-image: url('images/OpenDay3.jpg');
     background-size: cover">
 
         <div class="flex flex-col p-4 rounded-lg shadow-lg">
-            <div
-                class="flex flex-col-reverse text-right  md:flex-row-reverse justify-center gap-4 font-bold text-xl font-sans">
+            <div class="flex flex-col-reverse text-right  justify-center gap-4 font-bold text-xl font-sans">
                 <div>
-                    |
+
                     مواقيت
                     الصلاة
                 </div>
@@ -43,125 +43,69 @@
         </button>
     </div>
 
+    <h2 id="marafiq" class="text-right text-4xl border-b-2 py-2 font-sans mr-8 md:mr-12 text-green-900">
+        أخبار و مقالات
+    </h2>
 
 
+    <!-- blogs -->
+    <div>
+        <div dir="rtl"
+            class="animate-popUp flex flex-col md:flex-row md:flex-wrap items-center md:justify-between md:space-y-2 space-y-4 md:mr-10">
+            @foreach($news as $index => $additional)
+            <div class="md:w-1/4">
+                <div
+                    class="md:max-w-72 max-w-xs bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
 
-    <h2 class="text-right border-b-2 m-12 py-2 text-4xl font-sans text-green-900">
-        أحدث الأخبار والمقالات</h2>
+                    <a href="/news/{{ $additional->id }}" class=" ">
+                        @php
+                        $imagePath = !empty($additional->images) ? asset('storage/' . $additional->images[0]) :
+                        asset('images/SmallWhiteLogo.svg');
+                        $isSmallWhiteLogo = $imagePath === asset('images/SmallWhiteLogo.svg');
+                        @endphp
+                        <img class="rounded-t-lg border-2 bg-green-700 {{ $isSmallWhiteLogo ? ' p-10 h-44' : 'w-96 h-44' }}"
+                            src="{{ $imagePath }}" alt="" />
+                    </a>
 
-
-
-    <!-- Carousel -->
-    <div class="flex flex-col md:m-10 m-6">
-        <div id="default-carousel" class="relative w-full " data-carousel="slide">
-
-            <!-- Carousel wrapper -->
-            <div class="relative  overflow-hidden rounded-lg md:h-screen h-96  border-2">
-                @foreach ($featuredNews as $item)
-                <div id="carousel-wrapper"
-                    class=" flex flex-col justify-between items-center content-center bg-green-500  {{ !empty($item->images) ? 'absolute  w-full h-full  hidden duration-1000 ease-in-out' : ' hidden    duration-500 ease-in-out' }}"
-                    data-carousel-item style="background-image: url('{{ !empty($item->images) ? asset('storage/' . $item->images[0]) : asset('images/LargeLogo.svg') }}'); 
-                        background-repeat: no-repeat;
-                        background-size: {{ !empty($item->images) ? 'cover' : 'auto' }}; 
-                        background-position: center;
-                        ">
-
-                    <div></div>
-                    <div
-                        class="flex flex-col justify-center items-center  space-x-7 md:space-x-0  md:space-y-2  md:items-center bg-green-900  w-full p-1 text-white ">
-                        <div id="news-title" class="opacity-85 font-bold font-sans"> {{$item->title}}
-                        </div>
-                        <div
-                            class="bg-white text-green-800 contrast-12 font-bold text-nowrap rounded-md p-2 md:p-1  hover:bg-green-400 duration-500 ">
-                            <a href="/news/{{ $item->id }}" class="text-nowrap">
-                                عرض الحدث
-                            </a>
-                        </div>
+                    <div class="p-5">
+                        <a href="/news/{{ $additional->id }}">
+                            <h5
+                                class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white text-ellipsis overflow-hidden line-clamp-1 ">
+                                {{ $additional->title }}
+                            </h5>
+                        </a>
+                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                            {{ \Carbon\Carbon::parse($additional->created_at)->format('Y-m-d') }}</p>
+                        <a href="/news/{{ $additional->id }}"
+                            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-green-700 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                            اقرأ المزيد ↓
+                            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                            </svg>
+                        </a>
                     </div>
                 </div>
-                @endforeach
-
             </div>
 
-            <!-- Slider Controls -->
-            <button type="button"
-                class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-                data-carousel-prev>
-                <span
-                    class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-green-800 dark:bg-gray-800/30 group-hover:bg-green-600 duration-200 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                    <svg class="w-4 h-4 text-gray-300 dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M5 1 1 5l4 4" />
-                    </svg>
-                    <span class="sr-only">Previous</span>
-                </span>
-            </button>
-            <button type="button"
-                class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-                data-carousel-next>
-                <span
-                    class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-green-800 dark:bg-gray-800/30 group-hover:bg-green-600 duration-200 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                    <svg class="w-4 h-4 text-gray-300 dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="m1 9 4-4-4-4" />
-                    </svg>
-                    <span class="sr-only">Next</span>
-                </span>
-            </button>
+
+            @if(($index + 1) % 2 == 0)
+            <div class="w-full md:hidden mb-4"></div>
+            @endif
+            @endforeach
+        </div>
+        <div class="flex justify-center mt-4">
+            <a wire:click="loadMore" href="#"
+                class="inline-flex items-center px-3 py-2 text-xl mt-7 font-medium text-center text-white bg-green-700 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                ↓ اقرأ المزيد
+            </a>
         </div>
     </div>
 
-    <div class="md:m-10 m-6 animate-popUp ">
-        <div class="px-4 mt-12 md:mt-0" dir="rtl">
-            <div>
-                <h2 class="text-right text-4xl font-sans text-green-900 text-nowrap">أخبار إضافية
-                </h2>
-                <div class="md:grid md:grid-cols-2 mt-2 gap-4">
-                    @foreach($news as $index => $additional)
-                    <div class="w-full p-1">
-                        <div class="border-b-2 border-t-2  p-3 ">
-                            @php
-                            $imagePath = !empty($additional->images) ? asset('storage/' . $additional->images[0]) :
-                            asset('images/SmallLogo.svg');
-                            @endphp
-                            <div class="flex flex-row justify-between items-center ">
-                                <div dir="rtl" class="flex flex-col">
-
-                                    <div class="space-y-2">
-                                        <h3 id="additional-news"
-                                            class="text-xl font-bold text-ellipsis overflow-hidden line-clamp-1 ">
-                                            {{ $additional->title }}
-                                        </h3>
-                                        <p>{{ \Carbon\Carbon::parse($additional->created_at)->format('Y-m-d') }}</p>
-                                    </div>
-
-                                    <a id="read-more" href="/news/{{ $additional->id }}"
-                                        class="text-green-600 font-bold text-lg underline">اقرأ المزيد</a>
-                                </div>
-                                <div>
-                                    <img src="{{ $imagePath }}" alt="News Image" class="rounded-md w-24 h-20 border-2">
-
-                                </div>
-
-                            </div>
 
 
-                        </div>
-                    </div>
-                    @if(($index + 1) % 2 == 0)
-                    <div class="w-full md:hidden mb-4"></div>
-                    @endif
-                    @endforeach
-                </div>
-                <div class="flex justify-center mt-4">
-                    <button wire:click="loadMore"
-                        class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-700">تحميل المزيد ↓</button>
-                </div>
-            </div>
-        </div>
-    </div>
+
 
 
 
@@ -217,7 +161,7 @@
 
                 </div>
             </div>
-            <img src="images/OpenDay3.jpg" class="  border-2 rounded-lg h-96">
+            <img src="images/school.jpeg" class="  border-2 rounded-lg h-96">
         </div>
 
         <div class="flex flex-col-reverse justify-center md:flex-row rounded-md  border-green-800 md:m-10 m-6">
@@ -246,7 +190,7 @@
 
                 </div>
             </div>
-            <img src="images/OpenDay3.jpg" class=" border-2 rounded-lg  h-96">
+            <img src="images/library.jpeg" class=" border-2 rounded-lg  h-96">
         </div>
 
         <div class=" flex flex-col-reverse justify-center md:flex-row rounded-md  border-green-800 md:m-10 m-6">
@@ -273,75 +217,183 @@
         class=" hover:bg-emerald-400 fixed bottom-10 right-10 bg-green-600 text-white px-3 py-1 rounded-full hidden ">
         ↑
     </button>
-</div>
+
+
+    <!-- Islamic Services Section -->
+    <div dir="rtl" class="py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-base text-emerald-900 font-semibold tracking-wide uppercase">خدماتنا</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    خدمات دار الحديث </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+                    تقديم مجموعة من الخدمات لتلبية الاحتياجات والتساؤلات لجميع الأفراد و الأعمار
+                    إن شاء الله </p>
+            </div>
+
+            <div class="mt-10">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <!-- Service 1 -->
+                    <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                        <div class="p-6">
+                            <div
+                                class="p-2 flex items-center justify-center h-12 w-12 rounded-md bg-emerald-700 text-white mb-4">
+                                <!-- Replace with an appropriate icon -->
+                                <img src="images/prayIcon.svg" alt="pray">
+                            </div>
+                            <h3 class="text-lg font-medium text-gray-900">الصلوات اليومية </h3>
+                            <p class="mt-2 text-base text-gray-500">
+                                الصلوات اليومية الخمس و صلاة التراويح في رمضان . </p>
+                        </div>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                        <div class="p-6">
+                            <div
+                                class="p-2 flex items-center justify-center h-12 w-12 rounded-md bg-emerald-700 text-white mb-4">
+                                <!-- Replace with an appropriate icon -->
+                                <img src="images/prayIcon.svg" alt="pray">
+                            </div>
+                            <h3 class="text-lg font-medium text-gray-900">صلاة الجمعة</h3>
+                            <p class="mt-2 text-base text-gray-500">
+                                صلاة الجمعة المقامة من طرف الشيخ بن يونس أيت سالم. </p>
+                        </div>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                        <div class="p-6">
+                            <div
+                                class="p-2 flex items-center justify-center h-12 w-12 rounded-md bg-emerald-700 text-white mb-4">
+                                <!-- Replace with an appropriate icon -->
+                                <img src="images/learninIcon.svg" alt="">
+                            </div>
+                            <h3 class="text-lg font-medium text-gray-900">
+                                تربية و تعليم </h3>
+                            <p class="mt-2 text-base text-gray-500">
+                                برامجنا التعليمية للأطفال والبالغين، بما في ذلك القرآن و الفقه .
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Service 4 -->
+                    <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                        <div class="p-6">
+                            <div
+                                class="p-2 flex items-center justify-center h-12 w-12 rounded-md bg-emerald-700 text-white mb-4">
+                                <!-- Replace with an appropriate icon -->
+                                <img src="images/marriageIcon.svg" alt="">
+                            </div>
+                            <h3 class="text-lg font-medium text-gray-900">خدمات الزواج</h3>
+                            <p class="mt-2 text-base text-gray-500">
+                                نقدم خدمات النكاح التي يجريها الأئمة المؤهلون.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Service 5 -->
+                    <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                        <div class="p-6">
+                            <div
+                                class="p-2 flex items-center justify-center h-12 w-12 rounded-md bg-emerald-700 text-white mb-4">
+                                <!-- Replace with an appropriate icon -->
+                                <img src="images/consultIcon.svg" alt="">
+
+                            </div>
+                            <h3 class="text-lg font-medium text-gray-900">الاستشارات</h3>
+                            <p class="mt-2 text-base text-gray-500">
+                                استشارات و فتاوى من أئمتنا ومستشارين ذوي الخبرة. </p>
+                        </div>
+                    </div>
+
+                    <!-- Service 6 -->
+                    <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                        <div class="p-6">
+                            <div
+                                class="p-2  flex items-center justify-center h-12 w-12 rounded-md bg-emerald-700 text-white mb-4">
+                                <!-- Replace with an appropriate icon -->
+                                <img src="images/zakatIcon.svg" alt="">
+
+                            </div>
+                            <h3 class="text-lg font-medium text-gray-900">الزكاة والصدقة</h3>
+                            <p class="mt-2 text-base text-gray-500">
+                                ساهم في برامج الزكاة والصدقة لدينا لمساعدة المحتاجين.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
-
-
-
-<script>
-function isArabic(text) {
-    const arabicPattern = /[\u0600-\u06FF]/;
-    return arabicPattern.test(text);
-}
-
-document.addEventListener(" DOMContentLoaded", function() {
-    const newsTitle = document.getElementById('news-title');
-    const carouselWrapper = document.getElementById('carousel-wrapper');
-    if (isArabic(newsTitle.innerText)) {
-        newsTitle.setAttribute('dir', 'rtl');
-        newsTitle.classList.add('text-right items-end');
-        carouselWrapper.setAttribute('dir', 'rtl');
-    } else {
-        newsTitle.setAttribute('dir', 'ltr');
+    <script>
+    function isArabic(text) {
+        const arabicPattern = /[\u0600-\u06FF]/;
+        return arabicPattern.test(text);
     }
-});
-</script>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const navbarLinks = document.querySelectorAll('a[href^="#"]');
-
-    navbarLinks.forEach(link => {
-        link.addEventListener('click', function(event) {
-            event.preventDefault();
-
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-
-                // Adjust scroll position to account for fixed navbar or offset
-                setTimeout(() => {
-                    const scrollY = window.scrollY;
-                    window.scroll({
-                        top: scrollY - 100,
-                        behavior: 'smooth'
-                    });
-                }, 500); // Adjust delay as necessary
-            }
-        });
-    });
-    const scrollToTopButton = document.getElementById('scroll-to-top');
-
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 200) {
-            scrollToTopButton.classList.remove('hidden');
+    document.addEventListener(" DOMContentLoaded", function() {
+        const newsTitle = document.getElementById('news-title');
+        const carouselWrapper = document.getElementById('carousel-wrapper');
+        if (isArabic(newsTitle.innerText)) {
+            newsTitle.setAttribute('dir', 'rtl');
+            newsTitle.classList.add('text-right items-end');
+            carouselWrapper.setAttribute('dir', 'rtl');
         } else {
-            scrollToTopButton.classList.add('hidden');
+            newsTitle.setAttribute('dir', 'ltr');
         }
     });
+    </script>
 
-    scrollToTopButton.addEventListener('click', function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const navbarLinks = document.querySelectorAll('a[href^="#"]');
+
+        navbarLinks.forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+
+                    // Adjust scroll position to account for fixed navbar or offset
+                    setTimeout(() => {
+                        const scrollY = window.scrollY;
+                        window.scroll({
+                            top: scrollY - 100,
+                            behavior: 'smooth'
+                        });
+                    }, 500); // Adjust delay as necessary
+                }
+            });
+        });
+        const scrollToTopButton = document.getElementById('scroll-to-top');
+
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 200) {
+                scrollToTopButton.classList.remove('hidden');
+            } else {
+                scrollToTopButton.classList.add('hidden');
+            }
+        });
+
+        scrollToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
     });
-});
-</script>
+    </script>
+</div>

@@ -40,7 +40,7 @@ class Home extends Component
     public function mount()
     {
         $this->news = collect(); 
-        $this->featuredNews = news::latest()->take(5)->get(); // Fetch 3 latest items
+        $this->featuredNews = news::latest()->take(3)->get(); // Fetch 3 latest items
         $this->currentDate = Carbon::now()->format('d-m-Y');
         $this->fetchPrayerTimes();
         $this->hijriDate = $this->getHijriDate($this->currentDate);
@@ -98,7 +98,7 @@ class Home extends Component
       public function loadMore()
     {
         $newsItems = news::latest()->inRandomOrder()
-        ->paginate(5, ['*'], 'page', $this->page); // Fetch 5 latest items per page
+        ->paginate(4, ['*'], 'page', $this->page); // Fetch 5 latest items per page
         $this->news = $this->news->concat($newsItems->items()); // Concatenate new items
         $this->page++; 
     }
