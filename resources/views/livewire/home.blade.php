@@ -43,7 +43,7 @@
         </button>
     </div>
 
-    <h2 id="marafiq" class="text-right text-4xl border-b-2 py-2 font-sans mr-8 md:mr-12 text-green-900">
+    <h2 id="marafiq" class="text-right text-4xl md:border-b-2  py-10 md:py-2 font-sans mr-8 md:mr-12 text-green-900">
         أخبار و مقالات
     </h2>
 
@@ -146,13 +146,13 @@
     </div> -->
 
     <div class="">
-        <h2 id="marafiq" class="text-right text-4xl border-b-2 py-2 font-sans mr-8 md:mr-12 text-green-900">
+        <h2 id="marafiq" class="text-right text-4xl border-b-2 py-2 mt-10 font-sans mr-8 md:mr-12 text-green-900">
             مرافق دار
             الحديث</h2>
         <div class="flex flex-col-reverse justify-center md:flex-row  md:m-10 m-6">
             <div dir="rtl" class="flex flex-col justify-center md:justify- space-y-5 md:space-y-9 font-serif m-6">
                 <div class="font-bold  text-green-950 text-4xl">المدرسة التحضيرية </div>
-                <div class="md:text-4xl font-sans">
+                <div class="md:text-3xl font-sans">
                     تستقبل المدرسة الأطفال الصغار البالغين من العمر أربع سنوات، وخمس سنوات، وأكثر، ويمتاز البرنامج
                     السنوي
                     بالطابع الديني والتركيز على القرآن الكريم والحديث الشريف والآداب الإسلامية بالإضافة الى مواد الحساب
@@ -167,7 +167,7 @@
         <div class="flex flex-col-reverse justify-center md:flex-row rounded-md  border-green-800 md:m-10 m-6">
             <div dir="rtl" class="flex flex-col justify-center md:justify- space-y-5 md:space-y-9 font-serif m-6">
                 <div class="font-bold text-2xl text-green-950 md:text-4xl">المصلى </div>
-                <div class="md:text-4xl font-sans">
+                <div class="md:text-3xl font-sans">
                     يقع في الطابق الأرضي , تقام فيه الصلوات الخمس , صلاة الجمعة من طرف الشيخ بن يونس آيت سالم و صلاة
                     التراويح في رمضان بالإضافة إلى العديد من الأنشطة مثل حلقات تلاوة القرآن الكريم و دروس خفيفة من طرف
                     أساتذة وشيوخ لتزكية النفوس و هز القلوب
@@ -180,7 +180,7 @@
         <div class="flex flex-col-reverse justify-center md:flex-row rounded-md border-green-800 md:m-10 m-6">
             <div dir="rtl" class="flex flex-col justify-center md:justify- space-y-5 md:space-y-3 font-serif m-6">
                 <div class="font-bold text-2xl text-green-950 md:text-4xl">المكتبة </div>
-                <div class="md:text-3xl font-sans">تقع في الطابق الأول، وتحتوي على حوالي خمسة آلاف كتاب في مجالات دينية
+                <div class="md:text-2xl font-sans">تقع في الطابق الأول، وتحتوي على حوالي خمسة آلاف كتاب في مجالات دينية
                     متنوعة كالتفسير، الفقه، والعقيدة، بالإضافة إلى كتب الحركة الإصلاحية واللغة العربية. تضم المكتبة
                     أيضًا
                     مخطوطات قيمة مثل مخطوطة المصحف الشريف وصحيح البخاري. تحتوي المكتبة على قاعة للمطالعة، قاعة محاضرات و
@@ -197,7 +197,7 @@
             <div dir="rtl" class="flex flex-col justify-center md:justify- space-y-5 md:space-y-6 font-serif m-6">
                 <div class="font-bold text-2xl text-green-950 md:text-4xl"> المدرسة القرآنية
                 </div>
-                <div class="md:text-2xl font-sans">
+                <div class="md:text-xl font-sans">
                     تم افتتاح المدرسة القرآنية لدار الحديث بقاعة النساء بالطابق السفلي في مارس 1996 من قبل الجمعية
                     الدينية
                     والثقافية والعلمية. تطوع الشيخ محمد بوكلي حسن، حفيد الشيخ بوشناق، لتعليم القرآن فيها. يعمل محمد الآن
