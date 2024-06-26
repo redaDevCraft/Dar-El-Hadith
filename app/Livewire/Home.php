@@ -15,7 +15,8 @@ class Home extends Component
 
     public $news;
     public $videos;
-    
+    public $hasMoreNews = true;
+    public $hasMoreVideos = true;
     public $featuredNews;
     public $page = 1; // Track the current page
     public $currentSlide = 0;
@@ -49,6 +50,10 @@ class Home extends Component
         $this->prayerLabels;
         $this->loadMore(); 
         $this->loadVideos();
+        $this->checkIfMoreNews();
+        $this->checkIfMoreVideos();
+        
+
 
     
     }
@@ -64,8 +69,13 @@ class Home extends Component
             ->skip(count($this->videos))
             ->take(1)
             ->get();
+        $this->checkIfMoreVideos();
 
         $this->videos = $this->videos->concat($moreVideos);
+    }
+    public function checkIfMoreVideos()
+    {
+        $this->hasMoreVideos = $this->videos->count() < Video::count();
     }
 
 
@@ -119,9 +129,15 @@ class Home extends Component
       public function loadMore()
     {
         $newsItems = news::latest()->inRandomOrder()
-        ->paginate(4, ['*'], 'page', $this->page); // Fetch 5 latest items per page
+        ->paginate(4, ['*'], 'page', $this->page); 
+        $this->checkIfMoreNews();
         $this->news = $this->news->concat($newsItems->items()); // Concatenate new items
         $this->page++; 
+    }
+
+    public function checkIfMoreNews(){
+        $this->hasMoreNews = $this->news->count() < news::count();
+        
     }
 
     public function render()

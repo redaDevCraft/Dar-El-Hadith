@@ -6,6 +6,7 @@ use Filament\Widgets\StatsOverviewWidget as BaseWidget;
 use Filament\Widgets\StatsOverviewWidget\Stat;
 use App\Models\news;
 use App\Models\User;
+use App\Models\Video;
 
 class NewsOverview extends BaseWidget
 {
@@ -19,6 +20,9 @@ class NewsOverview extends BaseWidget
             Stat::make(__('Total Admins'), User::count()) // Translate "Total users" using __() helper
             ->description(__('All Admins in the database'))
             ->descriptionIcon('heroicon-m-user-group'),
+             Stat::make(__('Total Videos'), Video::count()) // Translate "Total news" using __() helper
+              ->description(__('All Videos in the database'))
+            ->descriptionIcon('heroicon-m-video-camera'),
         
         ];
     }

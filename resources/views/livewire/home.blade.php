@@ -89,10 +89,18 @@
             @endforeach
         </div>
         <div class="flex justify-center mt-4">
+            @if ($hasMoreNews)
             <a wire:click="loadMore" href="#"
-                class=" items-center px-3 py-2 text-xl font-medium text-center text-white bg-green-700 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-emerald-300 dark:bg-emerald-600 dark:hover:bg-emerald-700 dark:focus:ring-emerald-800">
+                class="items-center px-3 py-2 text-xl font-medium text-center text-white bg-green-700 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-emerald-300 dark:bg-emerald-600 dark:hover:bg-emerald-700 dark:focus:ring-emerald-800">
                 ↓ المزيد
             </a>
+            @else
+            <button
+                class="items-center px-3 py-2 text-xl font-medium text-center text-white bg-gray-500 rounded-lg cursor-not-allowed"
+                disabled>
+                لا توجد المزيد من المقالات
+            </button>
+            @endif
         </div>
     </div>
 
@@ -244,10 +252,18 @@
 
         @if ($videos->count() >= 1)
         <div class="w-full text-center mt-2">
-            <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
-                wire:click="loadMoreVids">
-                تحميل المزيد
+            @if ($hasMoreVideos)
+            <button wire:click="loadMoreVids"
+                class="items-center px-3 py-2 text-xl font-medium text-center text-white bg-green-700 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-emerald-300 dark:bg-emerald-600 dark:hover:bg-emerald-700 dark:focus:ring-emerald-800">
+                ↓ تحميل المزيد
             </button>
+            @else
+            <button
+                class="items-center px-3 py-2 text-xl font-medium text-center text-white bg-gray-500 rounded-lg cursor-not-allowed"
+                disabled>
+                لا توجد المزيد من الفيديوهات
+            </button>
+            @endif
         </div>
         @endif
         @else
