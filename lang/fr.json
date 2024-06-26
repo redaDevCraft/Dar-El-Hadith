@@ -26,5 +26,9 @@
     "history": "histoire",
     "All news in the database": "Toutes les actualités dans la base de données",
     "All Admins in the database": "Tous les administrateurs dans la base de données",
-    "Subtitle": "Sous-titre"
+    "Subtitle": "Sous-titre",
+    "Videos": "Vidéos",
+    "videos": "vidéos",
+    "All Videos in the database": "Toutes les vidéos dans la base de données",
+    "Total Videos": " Total des vidéos"
 }

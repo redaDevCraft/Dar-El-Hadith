@@ -4,12 +4,8 @@
     background-size: cover">
 
         <div class="flex flex-col p-4 rounded-lg shadow-lg">
-            <div class="flex flex-col-reverse text-right  justify-center gap-4 font-bold text-xl font-sans">
-                <div>
+            <div class="flex flex-row-reverse text-right  justify-center gap-4 font-bold text-xl font-sans">
 
-                    مواقيت
-                    الصلاة
-                </div>
                 <div>
                     {{ $currentDate }} | {{ $hijriDate }}
                 </div>
@@ -18,7 +14,7 @@
             @if($prayerTimes)
             <div dir="rtl" class="flex flex-col md:flex-row ">
                 @foreach (['Fajr', 'Dhuhr', 'Asr', 'Maghrib', 'Isha'] as $prayer)
-                <div class="flex justify-evenly w-full text-2xl border-b border-spacing-7 p-2">
+                <div class="flex justify-evenly w-full text-2xl border-spacing-7 p-2">
                     <span class="font-bold">{{ $prayerLabels[$prayer] ?? $prayer }}</span>
                     <span>{{ $prayerTimes['timings'][$prayer] ?? 'N/A' }}</span>
                 </div>
@@ -43,62 +39,59 @@
         </button>
     </div>
 
-    <h2 id="marafiq" class="text-right text-4xl md:border-b-2  py-10 md:py-2 font-sans mr-8 md:mr-12 text-green-900">
-        أخبار و مقالات
+    <h2 id="default-carousel" class="text-center font-sans text-4xl mt-14 md:mt-0 md:py-2 md:mr-12 text-green-900">
+        مستجدات و مقالات
     </h2>
 
 
     <!-- blogs -->
-    <div>
+    <div class="  md:m-8 m-6">
         <div dir="rtl"
-            class="animate-popUp flex flex-col md:flex-row md:flex-wrap items-center md:justify-between md:space-y-2 space-y-4 md:mr-10">
+            class="animate-popUp flex flex-col md:flex-row md:flex-wrap gap-3  md:space-y-0 space-y-4 md:mr-[4%]">
             @foreach($news as $index => $additional)
-            <div class="md:w-1/4">
-                <div
-                    class="md:max-w-72 max-w-xs bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <div
+                class="md:max-w-72 md:w-1/4  bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
 
-                    <a href="/news/{{ $additional->id }}" class=" ">
-                        @php
-                        $imagePath = !empty($additional->images) ? asset('storage/' . $additional->images[0]) :
-                        asset('images/SmallWhiteLogo.svg');
-                        $isSmallWhiteLogo = $imagePath === asset('images/SmallWhiteLogo.svg');
-                        @endphp
-                        <img class="rounded-t-lg border-2 bg-green-700 {{ $isSmallWhiteLogo ? ' p-10 h-44' : 'w-96 h-44' }}"
-                            src="{{ $imagePath }}" alt="" />
+                <a href="/news/{{ $additional->id }}" class=" ">
+                    @php
+                    $imagePath = !empty($additional->images) ? asset('storage/' . $additional->images[0]) :
+                    asset('images/SmallWhiteLogo.svg');
+                    $isSmallWhiteLogo = $imagePath === asset('images/SmallWhiteLogo.svg');
+                    @endphp
+                    <img class="rounded-t-lg border-2 bg-green-700 {{ $isSmallWhiteLogo ? ' md:p-10 h-44 md:w-96 w-screen' : ' w-screen md:w-96 h-44' }}"
+                        src="{{ $imagePath }}" alt="" />
+                </a>
+
+                <div class="p-5">
+                    <a href="/news/{{ $additional->id }}">
+                        <h5
+                            class="mb-2 text-lg md:text-xl  font-bold tracking-tight text-gray-900 dark:text-white text-ellipsis overflow-hidden line-clamp-1 ">
+                            {{ $additional->title }}
+                        </h5>
                     </a>
-
-                    <div class="p-5">
-                        <a href="/news/{{ $additional->id }}">
-                            <h5
-                                class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white text-ellipsis overflow-hidden line-clamp-1 ">
-                                {{ $additional->title }}
-                            </h5>
-                        </a>
-                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                            {{ \Carbon\Carbon::parse($additional->created_at)->format('Y-m-d') }}</p>
-                        <a href="/news/{{ $additional->id }}"
-                            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-green-700 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            اقرأ المزيد ↓
-                            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                            </svg>
-                        </a>
-                    </div>
+                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                        {{ \Carbon\Carbon::parse($additional->created_at)->format('Y-m-d') }}
+                    </p>
+                    <a href="/news/{{ $additional->id }}"
+                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-green-700 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-emerald-300 dark:bg-emerald-600 dark:hover:bg-emerald-700 dark:focus:ring-emerald-800">
+                        اقرأ المزيد
+                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M1 5h12m0 0L9 1m4 4L9 9" />
+                        </svg>
+                    </a>
                 </div>
             </div>
 
 
-            @if(($index + 1) % 2 == 0)
-            <div class="w-full md:hidden mb-4"></div>
-            @endif
+
             @endforeach
         </div>
         <div class="flex justify-center mt-4">
             <a wire:click="loadMore" href="#"
-                class="inline-flex items-center px-3 py-2 text-xl mt-7 font-medium text-center text-white bg-green-700 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                ↓ اقرأ المزيد
+                class=" items-center px-3 py-2 text-xl font-medium text-center text-white bg-green-700 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-emerald-300 dark:bg-emerald-600 dark:hover:bg-emerald-700 dark:focus:ring-emerald-800">
+                ↓ المزيد
             </a>
         </div>
     </div>
@@ -109,7 +102,7 @@
 
 
 
-    <!-- <div class="bg-gray-400 flex flex-row rounded-md border-2 border-green-800 m-6 ">
+    <!-- <div class="bg-gray-400 flex flex-row rounded-md border-2  m-6 ">
         <img src="images/ibrahimi.svg" class="m-4">
         <div class="flex flex-col justify-center items-end ">
             <div class=" font-bold">الشيخ البشير الإبراهيمي</div>
@@ -127,7 +120,7 @@
     <!-- <h2 class="text-center bg-gray-200 rounded-md m-6 p-4 font-bold text-3xl font-serif text-green-900">
         مؤسس دار الحديث</h2>
 
-    <div class="bg-gray-100 flex flex-col justify-center md:flex-row rounded-md border-2 border-green-800 md:m-10 m-6">
+    <div class="bg-gray-100 flex flex-col justify-center md:flex-row rounded-md border-2  md:m-10 m-6">
         <img src="images/ibrahimi.svg" class="m-4 md:h-96">
         <div dir="rtl" class="flex flex-col justify-center md:justify-evenly space-y-6  font-serif m-6">
             <div class=" font-bold text-2xl text-green-900 md:text-5xl">الشيخ البشير الإبراهيمي</div>
@@ -144,73 +137,89 @@
                 أكثر</a>
         </div>
     </div> -->
+    <h2 id="marafiq" class="text-center font-sans text-4xl  text-green-900">
+        مرافق دار
+        الحديث</h2>
+    <div class="md:flex md:flex-row md:flex-wrap  md:justify-center  md:m-10">
+        <div class="md:w-1/2">
+            <div class="flex  border-2  flex-col-reverse justify-center  md:m-10 m-6">
+                <div dir="rtl" class="flex flex-col justify-center md:justify- space-y-5 md:space-y-9 font-serif m-6">
+                    <div class="font-bold font-sans  text-green-950 text-3xl text-nowrap">المدرسة التحضيرية </div>
+                    <div class="md:text-3xl  font-sans">
+                        تستقبل المدرسة الأطفال الصغار البالغين من العمر أربع سنوات، وخمس سنوات، وأكثر، ويمتاز البرنامج
+                        السنوي
+                        بالطابع الديني والتركيز على القرآن الكريم والحديث الشريف والآداب الإسلامية بالإضافة الى مواد
+                        الحساب
+                        و
+                        مادة المحادثة المستوحاة من واقع التلميذ الاجتماعي والأسري.
 
-    <div class="">
-        <h2 id="marafiq" class="text-right text-4xl border-b-2 py-2 mt-10 font-sans mr-8 md:mr-12 text-green-900">
-            مرافق دار
-            الحديث</h2>
-        <div class="flex flex-col-reverse justify-center md:flex-row  md:m-10 m-6">
-            <div dir="rtl" class="flex flex-col justify-center md:justify- space-y-5 md:space-y-9 font-serif m-6">
-                <div class="font-bold  text-green-950 text-4xl">المدرسة التحضيرية </div>
-                <div class="md:text-3xl font-sans">
-                    تستقبل المدرسة الأطفال الصغار البالغين من العمر أربع سنوات، وخمس سنوات، وأكثر، ويمتاز البرنامج
-                    السنوي
-                    بالطابع الديني والتركيز على القرآن الكريم والحديث الشريف والآداب الإسلامية بالإضافة الى مواد الحساب
-                    و
-                    مادة المحادثة المستوحاة من واقع التلميذ الاجتماعي والأسري.
-
+                    </div>
                 </div>
+                <img src="images/school.jpeg" class="  border-2 rounded-lg md:h-96">
             </div>
-            <img src="images/school.jpeg" class="  border-2 rounded-lg h-96">
         </div>
 
-        <div class="flex flex-col-reverse justify-center md:flex-row rounded-md  border-green-800 md:m-10 m-6">
-            <div dir="rtl" class="flex flex-col justify-center md:justify- space-y-5 md:space-y-9 font-serif m-6">
-                <div class="font-bold text-2xl text-green-950 md:text-4xl">المصلى </div>
-                <div class="md:text-3xl font-sans">
-                    يقع في الطابق الأرضي , تقام فيه الصلوات الخمس , صلاة الجمعة من طرف الشيخ بن يونس آيت سالم و صلاة
-                    التراويح في رمضان بالإضافة إلى العديد من الأنشطة مثل حلقات تلاوة القرآن الكريم و دروس خفيفة من طرف
-                    أساتذة وشيوخ لتزكية النفوس و هز القلوب
+        <div class="md:w-1/2">
+            <div class=" border-2  flex flex-col-reverse justify-center  rounded-md   md:m-10 m-6">
+                <div dir="rtl" class="flex flex-col justify-center md:justify- space-y-5 md:space-y-9 font-serif m-6">
+                    <div class="font-bold font-sans text-3xl text-nowrap text-green-950 md:text-4xl">المصلى </div>
+                    <div class="md:text-3xl font-sans">
+                        يقع في الطابق الأرضي , تقام فيه الصلوات الخمس , صلاة الجمعة من طرف الشيخ بن يونس آيت سالم و صلاة
+                        التراويح في رمضان بالإضافة إلى العديد من الأنشطة مثل حلقات تلاوة القرآن الكريم و دروس خفيفة من
+                        طرف
+                        أساتذة وشيوخ لتزكية النفوس و هز القلوب
 
+                    </div>
                 </div>
+                <img src="images/OpenDay3.jpg" class="  border-2 rounded-lg md:h-96">
             </div>
-            <img src="images/OpenDay3.jpg" class="  border-2 rounded-lg h-96">
         </div>
 
-        <div class="flex flex-col-reverse justify-center md:flex-row rounded-md border-green-800 md:m-10 m-6">
-            <div dir="rtl" class="flex flex-col justify-center md:justify- space-y-5 md:space-y-3 font-serif m-6">
-                <div class="font-bold text-2xl text-green-950 md:text-4xl">المكتبة </div>
-                <div class="md:text-2xl font-sans">تقع في الطابق الأول، وتحتوي على حوالي خمسة آلاف كتاب في مجالات دينية
-                    متنوعة كالتفسير، الفقه، والعقيدة، بالإضافة إلى كتب الحركة الإصلاحية واللغة العربية. تضم المكتبة
-                    أيضًا
-                    مخطوطات قيمة مثل مخطوطة المصحف الشريف وصحيح البخاري. تحتوي المكتبة على قاعة للمطالعة، قاعة محاضرات و
-                    مكان للإعلام الآلي مزودة بالإنترنت. تقدم المكتبة دروس دعم ودورات تكوينية في الإعلام الآلي، وتفتح
-                    أبوابها
-                    يومياً من 9 صباحاً حتى 5 مساءا
+        <div class="md:w-1/2 h-full">
+            <div class=" border-2  flex flex-col-reverse h-full justify-center  rounded-md   md:m-10 m-6">
+                <div dir="rtl" class="flex flex-col justify-center  space-y-5 md:space-y-3 font-serif m-6">
+                    <div class="font-bold font-sans text-3xl text-nowrap text-green-950 md:text-4xl">المكتبة </div>
+                    <div class="md:text-3xl font-sans">تقع في الطابق الأول، وتحتوي على حوالي خمسة آلاف كتاب في مجالات
+                        دينية
+                        متنوعة كالتفسير، الفقه، والعقيدة، بالإضافة إلى كتب الحركة الإصلاحية واللغة العربية. تضم المكتبة
+                        أيضًا
+                        مخطوطات قيمة مثل مخطوطة المصحف الشريف وصحيح البخاري. تحتوي المكتبة على قاعة للمطالعة، قاعة
+                        محاضرات و
+                        مكان للإعلام الآلي مزودة بالإنترنت. تقدم المكتبة دروس دعم ودورات تكوينية في الإعلام الآلي، وتفتح
+                        أبوابها
+                        يومياً من 9 صباحاً حتى 5 مساءا
 
+                    </div>
                 </div>
+                <img src="images/library.jpeg" class=" border-2 rounded-lg  md:h-96">
             </div>
-            <img src="images/library.jpeg" class=" border-2 rounded-lg  h-96">
         </div>
 
-        <div class=" flex flex-col-reverse justify-center md:flex-row rounded-md  border-green-800 md:m-10 m-6">
-            <div dir="rtl" class="flex flex-col justify-center md:justify- space-y-5 md:space-y-6 font-serif m-6">
-                <div class="font-bold text-2xl text-green-950 md:text-4xl"> المدرسة القرآنية
-                </div>
-                <div class="md:text-xl font-sans">
-                    تم افتتاح المدرسة القرآنية لدار الحديث بقاعة النساء بالطابق السفلي في مارس 1996 من قبل الجمعية
-                    الدينية
-                    والثقافية والعلمية. تطوع الشيخ محمد بوكلي حسن، حفيد الشيخ بوشناق، لتعليم القرآن فيها. يعمل محمد الآن
-                    محاسبًا، وشارك معه في التدريس عبد الحكيم مير والبشير مرابط وعبد الإله عراوي. تفتح المدرسة أبوابها
-                    بعد
-                    صلاة العصر حتى العشاء للعاملين، وفي أوقات أخرى لغير العاملين. تشهد المدرسة إقبالاً متزايداً من مختلف
-                    الأعمار، حتى أن القاعة تضيق أحياناً بهم. توفر الجمعية التدفئة والتكييف وتكرم الطلبة. تخرج العديد من
-                    الطلبة الذين يحفظون القرآن ويؤمون الناس في الصلوات بالمدينة.
+        <div class="md:w-1/2">
+            <div class="  border-2 flex flex-col-reverse justify-center  rounded-md   md:m-10 m-6">
+                <div dir="rtl" class="flex flex-col justify-center md:justify- space-y-5 md:space-y-6 font-serif m-6">
+                    <div class="font-bold font-sans md:text-3xl text-3xl text-nowrap text-green-950 "> المدرسة القرآنية
+                    </div>
+                    <div class="md:text-3xl font-sans">
+                        تم افتتاح المدرسة القرآنية لدار الحديث بقاعة النساء بالطابق السفلي في مارس 1996 من قبل الجمعية
+                        الدينية
+                        والثقافية والعلمية. تطوع الشيخ محمد بوكلي حسن، حفيد الشيخ بوشناق، لتعليم القرآن فيها. يعمل محمد
+                        الآن
+                        محاسبًا، وشارك معه في التدريس عبد الحكيم مير والبشير مرابط وعبد الإله عراوي. تفتح المدرسة
+                        أبوابها
+                        بعد
+                        صلاة العصر حتى العشاء للعاملين، وفي أوقات أخرى لغير العاملين. تشهد المدرسة إقبالاً متزايداً من
+                        مختلف
+                        الأعمار، حتى أن القاعة تضيق أحياناً بهم. توفر الجمعية التدفئة والتكييف وتكرم الطلبة. تخرج العديد
+                        من
+                        الطلبة الذين يحفظون القرآن ويؤمون الناس في الصلوات بالمدينة.
 
+                    </div>
                 </div>
+                <img src="images/OpenDay3.jpg" class=" md:h-96 border-2 rounded-lg">
             </div>
-            <img src="images/OpenDay3.jpg" class=" h-96 border-2 rounded-lg">
         </div>
+
     </div>
 
     <button id="scroll-to-top"
@@ -219,12 +228,41 @@
     </button>
 
 
+    <h2 id="videos" class="text-center font-sans text-4xl p-4 text-green-900">
+        فيديوهات
+    </h2>
+    <div class="flex flex-col justify-center items-center gap-4 md:gap-0  rounded-lg">
+        @if ($videos->count() > 0)
+        @foreach ($videos as $video)
+        <div class=" md:m-10 rounded-md">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/{{ $video->url }}" frameborder="0" allowfullscreen
+                    class="md:rounded-md rounded-lg w-[380px] h-[200px] md:w-[1270px] md:h-[400px]"></iframe>
+            </div>
+        </div>
+        @endforeach
+
+        @if ($videos->count() >= 1)
+        <div class="w-full text-center mt-2">
+            <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+                wire:click="loadMoreVids">
+                تحميل المزيد
+            </button>
+        </div>
+        @endif
+        @else
+        <p class="text-center text-xl mt-4">لا توجد فيديوهات.</p>
+        @endif
+    </div>
+
+
+
     <!-- Islamic Services Section -->
     <div dir="rtl" class="py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
                 <h2 class="text-base text-emerald-900 font-semibold tracking-wide uppercase">خدماتنا</h2>
-                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                <p class="mt-2 text-3xl leading-8 font-sans tracking-tight text-gray-900 sm:text-4xl">
                     خدمات دار الحديث </p>
                 <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
                     تقديم مجموعة من الخدمات لتلبية الاحتياجات والتساؤلات لجميع الأفراد و الأعمار
@@ -271,7 +309,7 @@
                                 <img src="images/learninIcon.svg" alt="">
                             </div>
                             <h3 class="text-lg font-medium text-gray-900">
-                                تربية و تعليم </h3>
+                                التربية و التعليم </h3>
                             <p class="mt-2 text-base text-gray-500">
                                 برامجنا التعليمية للأطفال والبالغين، بما في ذلك القرآن و الفقه .
                             </p>
@@ -286,7 +324,7 @@
                                 <!-- Replace with an appropriate icon -->
                                 <img src="images/marriageIcon.svg" alt="">
                             </div>
-                            <h3 class="text-lg font-medium text-gray-900">خدمات الزواج</h3>
+                            <h3 class="text-lg font-medium text-gray-900">خدمات عقود الزواج</h3>
                             <p class="mt-2 text-base text-gray-500">
                                 نقدم خدمات النكاح التي يجريها الأئمة المؤهلون.
                             </p>
@@ -302,7 +340,7 @@
                                 <img src="images/consultIcon.svg" alt="">
 
                             </div>
-                            <h3 class="text-lg font-medium text-gray-900">الاستشارات</h3>
+                            <h3 class="text-lg font-medium text-gray-900">الاستشارات الدينية</h3>
                             <p class="mt-2 text-base text-gray-500">
                                 استشارات و فتاوى من أئمتنا ومستشارين ذوي الخبرة. </p>
                         </div>
@@ -317,9 +355,9 @@
                                 <img src="images/zakatIcon.svg" alt="">
 
                             </div>
-                            <h3 class="text-lg font-medium text-gray-900">الزكاة والصدقة</h3>
+                            <h3 class="text-lg font-medium text-gray-900">نشاطات اجتماعية </h3>
                             <p class="mt-2 text-base text-gray-500">
-                                ساهم في برامج الزكاة والصدقة لدينا لمساعدة المحتاجين.
+                                المشاركة في الأنشطة الاجتماعية التي تعزز روح المجتمع والتعاون
                             </p>
                         </div>
                     </div>

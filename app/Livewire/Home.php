@@ -5,15 +5,17 @@ namespace App\Livewire;
 use Livewire\Component;
 use Livewire\WithPagination;
 use App\Models\news;
+use App\Models\Video;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Http;
-
 
 class Home extends Component
 {
     use WithPagination;
 
     public $news;
+    public $videos;
+    
     public $featuredNews;
     public $page = 1; // Track the current page
     public $currentSlide = 0;
@@ -45,9 +47,28 @@ class Home extends Component
         $this->fetchPrayerTimes();
         $this->hijriDate = $this->getHijriDate($this->currentDate);
         $this->prayerLabels;
-        $this->loadMore(); // Load the initial set of news items
+        $this->loadMore(); 
+        $this->loadVideos();
 
+    
     }
+
+     public function loadVideos()
+    {
+        $this->videos = Video::orderBy('created_at', 'desc')->take(1)->get();
+    }
+
+     public function loadMoreVids()
+    {
+        $moreVideos = Video::orderBy('created_at', 'desc')
+            ->skip(count($this->videos))
+            ->take(1)
+            ->get();
+
+        $this->videos = $this->videos->concat($moreVideos);
+    }
+
+
 
      public function getHijriDate($date)
     {
@@ -106,5 +127,9 @@ class Home extends Component
     public function render()
     {
         return view('livewire.home');
+      
+        
+       
+    
     }
 }

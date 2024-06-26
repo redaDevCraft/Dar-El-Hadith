@@ -27,7 +27,12 @@
     "history": "التاريخ",
     "All news in the database": "جميع الاخبار في قاعدة البيانات",
     "All Admins in the database": " جميع المشرفين في قاعدة البيانات",
-    "Subtitle": "العنوان الفرعي"
+    "Subtitle": "العنوان الفرعي",
+    "Videos": "الفيديوهات",
+    "videos": "الفيديوهات",
+    "All Videos in the database": "جميع الفيديوهات في قاعدة البيانات",
+    "Total Videos": "اجمالي الفيديوهات"
+
 }
 
 

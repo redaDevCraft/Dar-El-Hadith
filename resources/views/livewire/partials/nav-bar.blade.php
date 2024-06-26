@@ -13,11 +13,10 @@
 
             <ul
                 class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-
                 <li>
-                    <a href="/admin"
-                        class="block py-2 px-3 hover:shadow-sm text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-700 md:p-1 dark:text-white md:dark:hover:text-green-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">لوحة
-                        التحكم</a>
+                    <a href="/"
+                        class="block py-2 px-3 text-white bg-green-900  hover:bg-emerald-600 animate duration-300 rounded  md:text-white  md:p-1 dark:text-white md:dark:text-green-500"
+                        aria-current="page">الرئيسية</a>
                 </li>
                 <li>
                     <a href="/#marafiq"
@@ -31,11 +30,7 @@
                     <a href="/history"
                         class="block py-2 px-3 hover:shadow-sm text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-700 md:p-1 dark:text-white md:dark:hover:text-green-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">التاريــخ</a>
                 </li>
-                <li>
-                    <a href="/"
-                        class="block py-2 px-3 text-white bg-green-900  hover:bg-emerald-600 animate duration-300 rounded  md:text-white  md:p-1 dark:text-white md:dark:text-green-500"
-                        aria-current="page">الرئيسية</a>
-                </li>
+
 
 
             </ul>
@@ -67,10 +62,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 setTimeout(() => {
                     const scrollY = window.scrollY;
                     window.scroll({
-                        top: scrollY - 100,
+                        top: scrollY - 200,
                         behavior: 'smooth'
                     });
-                }, 500); // Adjust delay as necessary
+                }, 1000); // Adjust delay as necessary
             }
         });
     });

@@ -30,7 +30,7 @@
                 </div>
 
                 <!-- Carousel controls -->
-                <div class="flex justify-center items-center pt-4 bg-gray-200">
+                <div class="flex justify-center items-center p-2 bg-gray-200">
                     <button type="button"
                         class="flex justify-center items-center me-4 h-full cursor-pointer group focus:outline-none"
                         data-carousel-prev>
