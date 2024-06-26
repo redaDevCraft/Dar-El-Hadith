@@ -28,7 +28,7 @@
 
     <div class=" animate-popUp flex flex-col justify-center items-center md:space-y-16 space-y-9 mt-2 md:m-10 m-6 rounded-lg md:py-[20%] h-60 bg-cover bg-center bg-no-repeat"
         style="background-image: url('images/OpenDay3.jpg');">
-        <h3 class="font-bold text-2xl md:text-6xl text-white text-center">
+        <h3 class=" text-2xl md:text-6xl text-white text-center reem-kufi-regular">
             دار الحديث بتلمسان..مهد العلماء و معقل الشهداء
         </h3>
         <button class="bg-green-700 text-white  hover:bg-white hover:text-emerald-900 border-2  text-nowrap font-bold p-2 md:p-3 rounded-lg  md:text-2xl  max-md:1/2  md:w-auto 
@@ -125,12 +125,12 @@
         </div>
     </div> -->
 
-    <!-- <h2 class="text-center bg-gray-200 rounded-md m-6 p-4 font-bold text-3xl font-serif text-green-900">
+    <!-- <h2 class="text-center bg-gray-200 rounded-md m-6 p-4 font-bold text-3xl font-sans text-green-900">
         مؤسس دار الحديث</h2>
 
     <div class="bg-gray-100 flex flex-col justify-center md:flex-row rounded-md border-2  md:m-10 m-6">
         <img src="images/ibrahimi.svg" class="m-4 md:h-96">
-        <div dir="rtl" class="flex flex-col justify-center md:justify-evenly space-y-6  font-serif m-6">
+        <div dir="rtl" class="flex flex-col justify-center md:justify-evenly space-y-6  font-sans m-6">
             <div class=" font-bold text-2xl text-green-900 md:text-5xl">الشيخ البشير الإبراهيمي</div>
             <div class="md:text-4xl text-green-950 font-sans">محمد البشير الإبراهيمي (1889-1965 م)الموافق
                 (1306 هـ -1385
@@ -145,90 +145,118 @@
                 أكثر</a>
         </div>
     </div> -->
-    <h2 id="marafiq" class="text-center font-sans text-4xl  text-green-900">
-        مرافق دار
-        الحديث</h2>
-    <div class="md:flex md:flex-row md:flex-wrap  md:justify-center  md:m-10">
-        <div class="md:w-1/2">
-            <div class="flex  border-2  flex-col-reverse justify-center  md:m-10 m-6">
-                <div dir="rtl" class="flex flex-col justify-center md:justify- space-y-5 md:space-y-9 font-serif m-6">
-                    <div class="font-bold font-sans  text-green-950 text-3xl text-nowrap">المدرسة التحضيرية </div>
-                    <div class="md:text-3xl  font-sans">
+
+    <div id="marafiq" dir="auto" class="container mx-auto py-10 px-4">
+        <!-- Title and Description Section -->
+        <div class="text-center mb-10">
+            <h2 class="font-sans text-4xl md:text-5xl text-green-900 font-bold mb-4">
+                مرافق دار الحديث
+            </h2>
+            <p class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
+                دار الحديث تضم مجموعة من المرافق التي تهدف إلى تقديم بيئة تعليمية ودينية متميزة. تتنوع هذه المرافق بين
+                المدرسة التحضيرية، المصلى، المكتبة، والمدرسة القرآنية، حيث يسعى كل منها لتلبية احتياجات المجتمعات و
+                الأفراد.
+            </p>
+        </div>
+
+        <!-- Grid Section -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Preparatory School Card -->
+            <div class="transform hover:scale-105 transition-transform duration-300">
+                <div class="relative overflow-hidden rounded-lg shadow-lg">
+                    <img src="images/school.jpeg"
+                        class="w-full h-64 md:h-80 object-cover transition-transform duration-500 hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-75"></div>
+                    <div class="absolute bottom-0 p-4 text-white">
+                        <h2 class="text-3xl md:text-4xl font-bold">المدرسة التحضيرية</h2>
+                    </div>
+                </div>
+                <div dir="rtl" class="p-6  bg-gradient-to-t from-gray-50 to-gray-200  shadow-lg rounded-lg space-y-4">
+                    <p class="md:text-3xl font-sans">
                         تستقبل المدرسة الأطفال الصغار البالغين من العمر أربع سنوات، وخمس سنوات، وأكثر، ويمتاز البرنامج
                         السنوي
                         بالطابع الديني والتركيز على القرآن الكريم والحديث الشريف والآداب الإسلامية بالإضافة الى مواد
                         الحساب
                         و
                         مادة المحادثة المستوحاة من واقع التلميذ الاجتماعي والأسري.
+                    </p>
+                </div>
+            </div>
 
+            <!-- Prayer Hall Card -->
+            <div class="transform hover:scale-105 transition-transform duration-300">
+                <div class="relative overflow-hidden rounded-lg shadow-lg">
+                    <img src="images/OpenDay3.jpg"
+                        class="w-full h-64 md:h-80 object-cover transition-transform duration-500 hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-75"></div>
+                    <div class="absolute bottom-0 p-4 text-white">
+                        <h2 class="text-3xl md:text-4xl font-bold">المصلى</h2>
                     </div>
                 </div>
-                <img src="images/school.jpeg" class="  border-2 rounded-lg md:h-96">
-            </div>
-        </div>
-
-        <div class="md:w-1/2">
-            <div class=" border-2  flex flex-col-reverse justify-center  rounded-md   md:m-10 m-6">
-                <div dir="rtl" class="flex flex-col justify-center md:justify- space-y-5 md:space-y-9 font-serif m-6">
-                    <div class="font-bold font-sans text-3xl text-nowrap text-green-950 md:text-4xl">المصلى </div>
-                    <div class="md:text-3xl font-sans">
+                <div dir="rtl" class="p-6  bg-gradient-to-t from-gray-50 to-gray-200 shadow-lg rounded-lg space-y-4">
+                    <p class="md:text-3xl font-sans">
                         يقع في الطابق الأرضي , تقام فيه الصلوات الخمس , صلاة الجمعة من طرف الشيخ بن يونس آيت سالم و صلاة
                         التراويح في رمضان بالإضافة إلى العديد من الأنشطة مثل حلقات تلاوة القرآن الكريم و دروس خفيفة من
                         طرف
-                        أساتذة وشيوخ لتزكية النفوس و هز القلوب
+                        أساتذة وشيوخ لتزكية النفوس و هز القلوب.
+                    </p>
+                </div>
+            </div>
 
+            <!-- Library Card -->
+            <div class="transform hover:scale-105 transition-transform duration-300">
+                <div class="relative overflow-hidden rounded-lg shadow-lg">
+                    <img src="images/library.jpeg"
+                        class="w-full h-64 md:h-80 object-cover transition-transform duration-500 hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-75"></div>
+                    <div class="absolute bottom-0 p-4 text-white">
+                        <h2 class="text-3xl md:text-4xl font-bold">المكتبة</h2>
                     </div>
                 </div>
-                <img src="images/OpenDay3.jpg" class="  border-2 rounded-lg md:h-96">
+                <div dir="rtl" class="p-6  bg-gradient-to-t from-gray-50 to-gray-200  shadow-lg rounded-lg space-y-4">
+                    <p class="md:text-3xl font-sans">
+                        تقع في الطابق الأول، وتحتوي على حوالي خمسة آلاف كتاب في مجالات دينية متنوعة كالتفسير، الفقه،
+                        والعقيدة،
+                        بالإضافة إلى كتب الحركة الإصلاحية واللغة العربية. تضم المكتبة أيضًا مخطوطات قيمة مثل مخطوطة
+                        المصحف
+                        الشريف وصحيح البخاري. تحتوي المكتبة على قاعة للمطالعة، قاعة محاضرات و مكان للإعلام الآلي مزودة
+                        بالإنترنت. تقدم المكتبة دروس دعم ودورات تكوينية في الإعلام الآلي، وتفتح أبوابها يومياً من 9
+                        صباحاً حتى
+                        5 مساءاً.
+                    </p>
+                </div>
             </div>
-        </div>
 
-        <div class="md:w-1/2 h-full">
-            <div class=" border-2  flex flex-col-reverse h-full justify-center  rounded-md   md:m-10 m-6">
-                <div dir="rtl" class="flex flex-col justify-center  space-y-5 md:space-y-3 font-serif m-6">
-                    <div class="font-bold font-sans text-3xl text-nowrap text-green-950 md:text-4xl">المكتبة </div>
-                    <div class="md:text-3xl font-sans">تقع في الطابق الأول، وتحتوي على حوالي خمسة آلاف كتاب في مجالات
-                        دينية
-                        متنوعة كالتفسير، الفقه، والعقيدة، بالإضافة إلى كتب الحركة الإصلاحية واللغة العربية. تضم المكتبة
-                        أيضًا
-                        مخطوطات قيمة مثل مخطوطة المصحف الشريف وصحيح البخاري. تحتوي المكتبة على قاعة للمطالعة، قاعة
-                        محاضرات و
-                        مكان للإعلام الآلي مزودة بالإنترنت. تقدم المكتبة دروس دعم ودورات تكوينية في الإعلام الآلي، وتفتح
-                        أبوابها
-                        يومياً من 9 صباحاً حتى 5 مساءا
-
+            <!-- Quranic School Card -->
+            <div class="transform hover:scale-105 transition-transform duration-300">
+                <div class="relative overflow-hidden rounded-lg shadow-lg">
+                    <img src="images/OpenDay3.jpg"
+                        class="w-full h-64 md:h-80 object-cover transition-transform duration-500 hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-75"></div>
+                    <div class="absolute bottom-0 p-4 text-white">
+                        <h2 class="text-3xl md:text-4xl font-bold">المدرسة القرآنية</h2>
                     </div>
                 </div>
-                <img src="images/library.jpeg" class=" border-2 rounded-lg  md:h-96">
-            </div>
-        </div>
-
-        <div class="md:w-1/2">
-            <div class="  border-2 flex flex-col-reverse justify-center  rounded-md   md:m-10 m-6">
-                <div dir="rtl" class="flex flex-col justify-center md:justify- space-y-5 md:space-y-6 font-serif m-6">
-                    <div class="font-bold font-sans md:text-3xl text-3xl text-nowrap text-green-950 "> المدرسة القرآنية
-                    </div>
-                    <div class="md:text-3xl font-sans">
+                <div dir="rtl" class="p-6 bg-gradient-to-t from-gray-50 to-gray-200 shadow-lg rounded-lg space-y-4">
+                    <p class="md:text-3xl font-sans">
                         تم افتتاح المدرسة القرآنية لدار الحديث بقاعة النساء بالطابق السفلي في مارس 1996 من قبل الجمعية
                         الدينية
                         والثقافية والعلمية. تطوع الشيخ محمد بوكلي حسن، حفيد الشيخ بوشناق، لتعليم القرآن فيها. يعمل محمد
                         الآن
                         محاسبًا، وشارك معه في التدريس عبد الحكيم مير والبشير مرابط وعبد الإله عراوي. تفتح المدرسة
-                        أبوابها
-                        بعد
+                        أبوابها بعد
                         صلاة العصر حتى العشاء للعاملين، وفي أوقات أخرى لغير العاملين. تشهد المدرسة إقبالاً متزايداً من
                         مختلف
                         الأعمار، حتى أن القاعة تضيق أحياناً بهم. توفر الجمعية التدفئة والتكييف وتكرم الطلبة. تخرج العديد
                         من
                         الطلبة الذين يحفظون القرآن ويؤمون الناس في الصلوات بالمدينة.
-
-                    </div>
+                    </p>
                 </div>
-                <img src="images/OpenDay3.jpg" class=" md:h-96 border-2 rounded-lg">
             </div>
         </div>
-
     </div>
+
+
 
     <button id="scroll-to-top"
         class=" hover:bg-emerald-400 fixed bottom-10 right-10 bg-green-600 text-white px-3 py-1 rounded-full hidden ">
@@ -236,13 +264,18 @@
     </button>
 
 
-    <h2 id="videos" class="text-center font-sans text-4xl p-4 text-green-900">
-        فيديوهات
-    </h2>
+    <div id="videos" class="text-center mb-3">
+        <h2 class="font-sans text-4xl md:text-5xl text-green-900 font-bold mb-4">
+            فيديوهات
+        </h2>
+        <p class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
+            استمتع بمشاهدة مجموعة مختارة من الفيديوهات التي تم إعدادها لتقديم محتوى تاريخي وتعليمي ذو قيمة.
+        </p>
+    </div>
     <div class="flex flex-col justify-center items-center gap-4 md:gap-0  rounded-lg">
         @if ($videos->count() > 0)
         @foreach ($videos as $video)
-        <div class=" md:m-10 rounded-md">
+        <div class=" md:m-10 rounded-lg">
             <div class="video-container">
                 <iframe src="https://www.youtube.com/embed/{{ $video->url }}" frameborder="0" allowfullscreen
                     class="md:rounded-md rounded-lg w-[380px] h-[200px] md:w-[1270px] md:h-[400px]"></iframe>
@@ -276,13 +309,16 @@
     <!-- Islamic Services Section -->
     <div dir="rtl" class="py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <h2 class="text-base text-emerald-900 font-semibold tracking-wide uppercase">خدماتنا</h2>
-                <p class="mt-2 text-3xl leading-8 font-sans tracking-tight text-gray-900 sm:text-4xl">
-                    خدمات دار الحديث </p>
-                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-                    تقديم مجموعة من الخدمات لتلبية الاحتياجات والتساؤلات لجميع الأفراد و الأعمار
-                    إن شاء الله </p>
+            <div class="container mx-auto  px-4">
+                <div class="text-center ">
+                    <h2 class="font-sans text-4xl md:text-5xl text-green-900 font-bold mb-4">خدماتنا
+                    </h2>
+
+                    <p class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
+                        نقدم مجموعة من الخدمات لتلبية احتياجات جميع الأفراد والأعمار. نسعى دائماً لتقديم أفضل ما لدينا
+                        لخدمتكم بإذن الله.
+                    </p>
+                </div>
             </div>
 
             <div class="mt-10">
@@ -404,50 +440,5 @@
     });
     </script>
 
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const navbarLinks = document.querySelectorAll('a[href^="#"]');
 
-        navbarLinks.forEach(link => {
-            link.addEventListener('click', function(event) {
-                event.preventDefault();
-
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-
-                    // Adjust scroll position to account for fixed navbar or offset
-                    setTimeout(() => {
-                        const scrollY = window.scrollY;
-                        window.scroll({
-                            top: scrollY - 100,
-                            behavior: 'smooth'
-                        });
-                    }, 500); // Adjust delay as necessary
-                }
-            });
-        });
-        const scrollToTopButton = document.getElementById('scroll-to-top');
-
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 200) {
-                scrollToTopButton.classList.remove('hidden');
-            } else {
-                scrollToTopButton.classList.add('hidden');
-            }
-        });
-
-        scrollToTopButton.addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    });
-    </script>
 </div>

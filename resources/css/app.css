@@ -1,5 +1,6 @@
 /* resources/css/app.css */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -17,5 +18,12 @@
     font-family: "Noto Nastaliq Urdu", serif;
     font-optical-sizing: auto;
     font-weight: 700;
+    font-style: normal;
+}
+
+.reem-kufi-regular {
+    font-family: "Reem Kufi", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
     font-style: normal;
 }

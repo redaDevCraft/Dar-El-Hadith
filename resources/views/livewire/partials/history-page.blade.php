@@ -3,7 +3,7 @@
     <div dir="ltr" class="m-6 ">
         @foreach ($history as $item)
         <div>
-            <div class="md:space-y-16 space-y-9 mt-2 p-4 md:p-7 py-[20%] md:py-[20%] rounded-lg"
+            <div class="md:space-y-16 space-y-9 mt-2 p-4 md:p-7 py-[20%] md:py-[20%] rounded-lg "
                 style="background-image: url('images/OpenDay3.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
                 <h1 id="news-title" class="font-bold text-2xl md:text-6xl text-white text-center text-nowrap">
                     {{$item->title}}
@@ -13,9 +13,10 @@
                 </h4>
             </div>
         </div>
-        <div class="md:flex flex-col md:flex-row-reverse md:justify-between mt-6 relative">
+        <div class="md:flex flex-col md:flex-row-reverse md:justify-between mt-6 relative ">
             <div class="prose  mt-3 md:overflow-y-auto md:pr-8 md:max-w-70vw text-2xl md:text-3xl">
-                <div id="news-content" class="custom-scrollbar select-none">
+                <div id="news-content" class="custom-scrollbar select-none 
+                ">
                     {!! \Illuminate\Support\Str::markdown($item->content) !!}
                     <button id="scroll-to-top"
                         class=" hover:bg-emerald-400 fixed bottom-10 right-10 bg-green-600 text-white px-3 py-1 rounded-full hidden ">
@@ -24,7 +25,7 @@
                 </div>
 
             </div>
-            <div class=" md:h-screen overflow-auto  sticky top-0">
+            <div class=" md:h-screen overflow-auto  sticky top-0 bg-gray-50">
                 <aside class="px-4 mt-12 md:mt-0" dir="rtl">
                     <div class="">
                         <h2 class="text-3xl font-sans  mb-4 text-right">أخبار إضافية</h2>

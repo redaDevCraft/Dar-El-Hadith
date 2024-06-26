@@ -1,29 +1,34 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="application-name" content="{{ config('app.name') }}" />
-        <meta name="csrf-token" content="{{ csrf_token() }}" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>{{ config('app.name') }}</title>
 
-        <style>
-            [x-cloak] {
-                display: none !important;
-            }
-        </style>
+<head>
+    <meta charset="utf-8" />
+    <meta name="application-name" content="{{ config('app.name') }}" />
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ config('app.name') }}</title>
 
-        @filamentStyles
-        @vite('resources/css/app.css')
-    </head>
-    <body class="antialiased min-h-screen flex flex-col">
-        <livewire:partials.nav-bar />
-        <div class="flex-grow">
-            {{ $slot }}
-        </div>
-        <livewire:partials.footer />
+    <style>
+    [x-cloak] {
+        display: none !important;
+    }
+    </style>
 
-        @filamentScripts
-        @vite('resources/js/app.js')
-    </body>
+    @filamentStyles
+    @vite('resources/css/app.css')
+</head>
+
+<body class="antialiased min-h-screen flex flex-col" style="background-image: url('images/mainBackground3.jpg');
+background-size : contain
+">
+    <livewire:partials.nav-bar />
+    <div class="flex-grow ">
+        {{ $slot }}
+    </div>
+    <livewire:partials.footer />
+
+    @filamentScripts
+    @vite('resources/js/app.js')
+</body>
+
 </html>
