@@ -1,4 +1,23 @@
-<nav class="bg-whit  dark:bg-gray-300 border-gray-400  ">
+<nav class="bg-whit  dark:bg-gray-300 border-gray-400  tajawal-bold relative">
+    <div class="text-xs hidden md:block animate-popUp border-2" style="background-image: url('images/mainBackground.jpg');
+    background-size: cover">
+
+        <div class="flex flex-col p-4 rounded-lg shadow-lg      ">
+
+            @if($prayerTimes)
+            <div dir="rtl" class="flex flex-col md:flex-row   reem-kufi-regular">
+                @foreach (['Fajr', 'Dhuhr', 'Asr', 'Maghrib', 'Isha'] as $prayer)
+                <div class="flex justify-evenly w-full text-2xl border-spacing-7 p-2">
+                    <span class="font-bold text-md">{{ $prayerLabels[$prayer] ?? $prayer }}</span>
+                    <span class="text-md animate-pulse">{{ $prayerTimes['timings'][$prayer] ?? 'N/A' }}</span>
+                </div>
+                @endforeach
+            </div>
+            @else
+            <p class="text-center">مواقيت الصلاة غير متوفرة</p>
+            @endif
+        </div>
+    </div>
     <div dir="rtl" class=" flex flex-wrap items-center justify-between mx-auto p-4 md:mx-7">
         <button id="navbar-toggle" data-collapse-toggle="navbar-default" type="button"
             class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
@@ -12,7 +31,7 @@
         <div class="hidden w-full md:block md:w-auto text-2xl" id="navbar-default">
 
             <ul
-                class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0  dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                class=" flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0  dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                 <li>
                     <a href="/"
                         class="block py-2 px-3 text-white bg-green-900  hover:bg-emerald-600 animate duration-300 rounded  md:text-white  md:p-1 dark:text-white md:dark:text-green-500"

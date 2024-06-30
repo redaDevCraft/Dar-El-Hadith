@@ -1,4 +1,4 @@
-<footer class="bg-gray-100  p-5 border-t-2 border-gray-300 mt-auto" dir="rtl" style="background-image: url('images/mainBackground3.jpg');
+<footer class="bg-gray-100 tajawal-regular p-5 border-t-2 border-gray-300 mt-auto" dir="rtl" style="background-image: url('images/mainBackground3.jpg');
 background-size : cover
 ">
     <div class="md:flex md:flex-row md:justify-evenly md:items-center">

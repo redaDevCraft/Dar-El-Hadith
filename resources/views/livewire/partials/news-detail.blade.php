@@ -1,4 +1,4 @@
-<div class="m-6 " id="main-div">
+<div class="m-6 tajawal-regular" id="main-div">
     <div class="row">
         <div>
             <div id="custom-controls-gallery" class="relative mx-[10%] border-2 rounded-md" data-carousel="slide">
@@ -70,7 +70,9 @@
                     {!! \Illuminate\Support\Str::markdown($news->content) !!}
                 </div>
             </div>
-            <div class=" h-screen overflow-auto  mt-16  sticky top-0 md:mr-48 border-r-2 bg-gray-50">
+            <div style="background-image: url('images/mainBackground3.jpg');
+background-size : contain
+" class=" h-screen overflow-auto  mt-16  sticky top-0 md:mr-48 border-r-2 bg-gray-50">
                 <aside class="px-4 overflow-auto md:mt-0" dir="rtl">
                     <h2 class="text-3xl font-bold  mb-4 text-right">أخبار إضافية</h2>
 

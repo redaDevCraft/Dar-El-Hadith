@@ -1,32 +1,5 @@
-<div class="relative ">
-
-    <div class="font-sans  animate-popUp  text-white rounded-lg md:m-10 m-6" style="background-image: url('images/OpenDay3.jpg');
-    background-size: cover">
-
-        <div class="flex flex-col p-4 rounded-lg shadow-lg">
-            <div class="flex flex-row-reverse text-right  justify-center gap-4 font-bold text-xl font-sans">
-
-                <div>
-                    {{ $currentDate }} | {{ $hijriDate }}
-                </div>
-
-            </div>
-            @if($prayerTimes)
-            <div dir="rtl" class="flex flex-col md:flex-row ">
-                @foreach (['Fajr', 'Dhuhr', 'Asr', 'Maghrib', 'Isha'] as $prayer)
-                <div class="flex justify-evenly w-full text-2xl border-spacing-7 p-2">
-                    <span class="font-bold">{{ $prayerLabels[$prayer] ?? $prayer }}</span>
-                    <span>{{ $prayerTimes['timings'][$prayer] ?? 'N/A' }}</span>
-                </div>
-                @endforeach
-            </div>
-            @else
-            <p class="text-center">مواقيت الصلاة غير متوفرة</p>
-            @endif
-        </div>
-    </div>
-
-    <div class=" animate-popUp flex flex-col justify-center items-center md:space-y-16 space-y-9 mt-2 md:m-10 m-6 rounded-lg md:py-[20%] h-60 bg-cover bg-center bg-no-repeat"
+<div class="relative tajawal-regular">
+    <div class=" animate-popUp flex flex-col justify-center items-center md:space-y-16 space-y-9 md:mx-10 m-6 rounded-lg md:py-[20%] h-60 bg-cover bg-center bg-no-repeat"
         style="background-image: url('images/OpenDay3.jpg');">
         <h3 class=" text-2xl md:text-6xl text-white text-center reem-kufi-regular">
             دار الحديث بتلمسان..مهد العلماء و معقل الشهداء
@@ -39,9 +12,16 @@
         </button>
     </div>
 
-    <h2 id="default-carousel" class="text-center font-sans text-4xl mt-14 md:mt-0 md:py-2 md:mr-12 text-green-900">
-        مستجدات و مقالات
-    </h2>
+    <div class=" mt-5 md:mt-14">
+        <h2 id="default-carousel" class="text-center font-bold text-4xl md:mr-12 text-green-900">
+            مستجدات و مقالات
+        </h2>
+        <p class="text-center text-lg font-medium  md:mr-12 text-gray-700">
+            اكتشف آخر الأخبار والمقالات في مجالات مختلفة لتحافظ على اطلاعك بكل جديد.
+        </p>
+
+    </div>
+
 
 
     <!-- blogs -->
@@ -149,7 +129,7 @@
     <div id="marafiq" dir="auto" class="container mx-auto py-10 px-4">
         <!-- Title and Description Section -->
         <div class="text-center mb-10">
-            <h2 class="font-sans text-4xl md:text-5xl text-green-900 font-bold mb-4">
+            <h2 class=" text-4xl md:text-5xl text-green-900 font-bold mb-4">
                 مرافق دار الحديث
             </h2>
             <p class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
@@ -160,7 +140,7 @@
         </div>
 
         <!-- Grid Section -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 tajawal-regular">
             <!-- Preparatory School Card -->
             <div class="transform hover:scale-105 transition-transform duration-300">
                 <div class="relative overflow-hidden rounded-lg shadow-lg">
@@ -172,7 +152,7 @@
                     </div>
                 </div>
                 <div dir="rtl" class="p-6  bg-gradient-to-t from-gray-50 to-gray-200  shadow-lg rounded-lg space-y-4">
-                    <p class="md:text-3xl font-sans">
+                    <p class="md:text-3xl ">
                         تستقبل المدرسة الأطفال الصغار البالغين من العمر أربع سنوات، وخمس سنوات، وأكثر، ويمتاز البرنامج
                         السنوي
                         بالطابع الديني والتركيز على القرآن الكريم والحديث الشريف والآداب الإسلامية بالإضافة الى مواد
@@ -186,7 +166,7 @@
             <!-- Prayer Hall Card -->
             <div class="transform hover:scale-105 transition-transform duration-300">
                 <div class="relative overflow-hidden rounded-lg shadow-lg">
-                    <img src="images/OpenDay3.jpg"
+                    <img src="images/mosque.jpeg"
                         class="w-full h-64 md:h-80 object-cover transition-transform duration-500 hover:scale-110">
                     <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-75"></div>
                     <div class="absolute bottom-0 p-4 text-white">
@@ -194,7 +174,7 @@
                     </div>
                 </div>
                 <div dir="rtl" class="p-6  bg-gradient-to-t from-gray-50 to-gray-200 shadow-lg rounded-lg space-y-4">
-                    <p class="md:text-3xl font-sans">
+                    <p class="md:text-3xl ">
                         يقع في الطابق الأرضي , تقام فيه الصلوات الخمس , صلاة الجمعة من طرف الشيخ بن يونس آيت سالم و صلاة
                         التراويح في رمضان بالإضافة إلى العديد من الأنشطة مثل حلقات تلاوة القرآن الكريم و دروس خفيفة من
                         طرف
@@ -214,7 +194,7 @@
                     </div>
                 </div>
                 <div dir="rtl" class="p-6  bg-gradient-to-t from-gray-50 to-gray-200  shadow-lg rounded-lg space-y-4">
-                    <p class="md:text-3xl font-sans">
+                    <p class="md:text-3xl ">
                         تقع في الطابق الأول، وتحتوي على حوالي خمسة آلاف كتاب في مجالات دينية متنوعة كالتفسير، الفقه،
                         والعقيدة،
                         بالإضافة إلى كتب الحركة الإصلاحية واللغة العربية. تضم المكتبة أيضًا مخطوطات قيمة مثل مخطوطة
@@ -238,7 +218,7 @@
                     </div>
                 </div>
                 <div dir="rtl" class="p-6 bg-gradient-to-t from-gray-50 to-gray-200 shadow-lg rounded-lg space-y-4">
-                    <p class="md:text-3xl font-sans">
+                    <p class="md:text-3xl ">
                         تم افتتاح المدرسة القرآنية لدار الحديث بقاعة النساء بالطابق السفلي في مارس 1996 من قبل الجمعية
                         الدينية
                         والثقافية والعلمية. تطوع الشيخ محمد بوكلي حسن، حفيد الشيخ بوشناق، لتعليم القرآن فيها. يعمل محمد
@@ -265,44 +245,48 @@
 
 
     <div id="videos" class="text-center mb-3">
-        <h2 class="font-sans text-4xl md:text-5xl text-green-900 font-bold mb-4">
+        <h2 class=" text-4xl md:text-5xl text-green-900 font-bold mb-4">
             فيديوهات
         </h2>
         <p class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
             استمتع بمشاهدة مجموعة مختارة من الفيديوهات التي تم إعدادها لتقديم محتوى تاريخي وتعليمي ذو قيمة.
         </p>
     </div>
-    <div class="flex flex-col justify-center items-center gap-4 md:gap-0  rounded-lg">
+
+    <div class="flex flex-wrap md:flex-col justify-center md:justify-start gap-4 rounded-lg">
         @if ($videos->count() > 0)
         @foreach ($videos as $video)
-        <div class=" md:m-10 rounded-lg">
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/{{ $video->url }}" frameborder="0" allowfullscreen
-                    class="md:rounded-md rounded-lg w-[380px] h-[200px] md:w-[1270px] md:h-[400px]"></iframe>
+        <div class=" md:w-1/2 md:h-1/2 md:ml-10  rounded-lg">
+            <div class="video-container ">
+                <lite-youtube short videoid="{{ $video->url }}" playlabel="Play Video: {{ $video->title }}"
+                    class="md:rounded-md bg-contain rounded-lg w-[380px] h-[200px] md:w-[1270px] md:h-[400px] " style="background-image: url('https://img.youtube.com/vi/{{ $video->url }}/hqdefault.jpg'); 
+                    ">
+                </lite-youtube>
             </div>
+            <div></div>
         </div>
         @endforeach
+    </div>
 
-        @if ($videos->count() >= 1)
-        <div class="w-full text-center mt-2">
-            @if ($hasMoreVideos)
-            <button wire:click="loadMoreVids"
-                class="items-center px-3 py-2 text-xl font-medium text-center text-white bg-green-700 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-emerald-300 dark:bg-emerald-600 dark:hover:bg-emerald-700 dark:focus:ring-emerald-800">
-                ↓ تحميل المزيد
-            </button>
-            @else
-            <button
-                class="items-center px-3 py-2 text-xl font-medium text-center text-white bg-gray-500 rounded-lg cursor-not-allowed"
-                disabled>
-                لا توجد المزيد من الفيديوهات
-            </button>
-            @endif
-        </div>
-        @endif
+    @if ($videos->count() >= 1)
+    <div class="w-full text-center mt-2">
+        @if ($hasMoreVideos)
+        <button wire:click="loadMoreVids"
+            class="items-center px-3 py-2 text-xl font-medium text-center text-white bg-green-700 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-emerald-300 dark:bg-emerald-600 dark:hover:bg-emerald-700 dark:focus:ring-emerald-800">
+            ↓ تحميل المزيد
+        </button>
         @else
-        <p class="text-center text-xl mt-4">لا توجد فيديوهات.</p>
+        <button
+            class="items-center px-3 py-2 text-xl font-medium text-center text-white bg-gray-500 rounded-lg cursor-not-allowed"
+            disabled>
+            لا توجد المزيد من الفيديوهات
+        </button>
         @endif
     </div>
+    @endif
+    @else
+    <p class="text-center text-xl mt-4">لا توجد فيديوهات.</p>
+    @endif
 
 
 
@@ -311,11 +295,12 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="container mx-auto  px-4">
                 <div class="text-center ">
-                    <h2 class="font-sans text-4xl md:text-5xl text-green-900 font-bold mb-4">خدماتنا
+                    <h2 class=" text-4xl md:text-5xl text-green-900 font-bold mb-4">خدماتنا
                     </h2>
 
                     <p class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
-                        نقدم مجموعة من الخدمات لتلبية احتياجات جميع الأفراد والأعمار. نسعى دائماً لتقديم أفضل ما لدينا
+                        نقدم مجموعة من الخدمات لتلبية احتياجات جميع الأفراد والأعمار. نسعى دائماً لتقديم أفضل ما
+                        لدينا
                         لخدمتكم بإذن الله.
                     </p>
                 </div>
@@ -392,7 +377,7 @@
                                 <img src="images/consultIcon.svg" alt="">
 
                             </div>
-                            <h3 class="text-lg font-medium text-gray-900">الاستشارات الدينية</h3>
+                            <h3 class="text-lg font-medium text-gray-900">الاستشارات الشرعية</h3>
                             <p class="mt-2 text-base text-gray-500">
                                 استشارات و فتاوى من أئمتنا ومستشارين ذوي الخبرة. </p>
                         </div>
