@@ -1,11 +1,9 @@
-<nav class="bg-whit  dark:bg-gray-300 border-gray-400  tajawal-bold relative">
-    <div class="text-xs hidden md:block animate-popUp border-2" style="background-image: url('images/mainBackground.jpg');
-    background-size: cover">
-
-        <div class="flex flex-col p-4 rounded-lg shadow-lg      ">
-
+<nav class="bg-whit dark:bg-gray-300 border-gray-400 tajawal-bold relative">
+    <div class="text-xs hidden md:block animate-popUp border-2"
+        style="background-image: url('images/mainBackground.jpg'); background-size: cover">
+        <div class="flex flex-col p-4 rounded-lg shadow-lg">
             @if($prayerTimes)
-            <div dir="rtl" class="flex flex-col md:flex-row   reem-kufi-regular">
+            <div dir="rtl" class="flex flex-col md:flex-row reem-kufi-regular">
                 @foreach (['Fajr', 'Dhuhr', 'Asr', 'Maghrib', 'Isha'] as $prayer)
                 <div class="flex justify-evenly w-full text-2xl border-spacing-7 p-2">
                     <span class="font-bold text-md">{{ $prayerLabels[$prayer] ?? $prayer }}</span>
@@ -18,7 +16,7 @@
             @endif
         </div>
     </div>
-    <div dir="rtl" class=" flex flex-wrap items-center justify-between mx-auto p-4 md:mx-7">
+    <div dir="rtl" class="flex flex-wrap items-center justify-between mx-auto p-4 md:mx-7">
         <button id="navbar-toggle" data-collapse-toggle="navbar-default" type="button"
             class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
             aria-controls="navbar-default" aria-expanded="false">
@@ -29,20 +27,19 @@
             </svg>
         </button>
         <div class="hidden w-full md:block md:w-auto text-2xl" id="navbar-default">
-
             <ul
-                class=" flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0  dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                class="flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                 <li>
                     <a href="/"
-                        class="block py-2 px-3 text-white bg-green-900  hover:bg-emerald-600 animate duration-300 rounded  md:text-white  md:p-1 dark:text-white md:dark:text-green-500"
+                        class="block py-2 px-3 text-white bg-green-900 hover:bg-emerald-600 animate duration-300 rounded md:text-white md:p-1 dark:text-white md:dark:text-green-500"
                         aria-current="page">الرئيسية</a>
                 </li>
                 <li>
-                    <a href="#marafiq"
+                    <a href="#marafiq" data-scroll-link="true" data-page-link="/#marafiq"
                         class="block py-2 px-3 hover:shadow-sm text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-700 md:p-1 dark:text-white md:dark:hover:text-green-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">المرافق</a>
                 </li>
                 <li>
-                    <a href="#default-carousel"
+                    <a href="#default-carousel" data-scroll-link="true" data-page-link="/#default-carousel"
                         class="block py-2 px-3 hover:shadow-sm text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-700 md:p-1 dark:text-white md:dark:hover:text-green-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">الأخبار</a>
                 </li>
                 <li>
@@ -50,15 +47,12 @@
                         class="block py-2 px-3 hover:shadow-sm text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-700 md:p-1 dark:text-white md:dark:hover:text-green-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">التاريــخ</a>
                 </li>
                 <li>
-                    <a href="#videos"
+                    <a href="#videos" data-scroll-link="true" data-page-link="/#videos"
                         class="block py-2 px-3 hover:shadow-sm text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-700 md:p-1 dark:text-white md:dark:hover:text-green-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">الفيديوهات</a>
                 </li>
-
-
-
             </ul>
         </div>
-        <a href="/" class="flex items-center space-x-3 hover:animate-pulse ">
+        <a href="/" class="flex items-center space-x-3 hover:animate-pulse">
             <img src="{{ asset('images/SmallLogo.svg') }}" alt="دار الحديث" class="h-12 mb-3">
         </a>
     </div>
@@ -66,24 +60,26 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    const navbarLinks = document.querySelectorAll('a[href^="#"]');
+    const currentPath = window.location.pathname;
+    const scrollLinks = document.querySelectorAll('a[data-scroll-link="true"]');
 
-    navbarLinks.forEach(link => {
-        link.addEventListener('click', function(event) {
-            event.preventDefault();
-
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-
-
-            }
-        });
+    scrollLinks.forEach(link => {
+        if (currentPath === '/') {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        } else {
+            const pageLink = link.getAttribute('data-page-link');
+            link.setAttribute('href', pageLink);
+        }
     });
 });
 </script>

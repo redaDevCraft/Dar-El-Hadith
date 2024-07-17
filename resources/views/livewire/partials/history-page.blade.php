@@ -1,5 +1,5 @@
 <!-- Livewire Component - partials/history-page.blade.php -->
-<div class="tajawal-regular">
+<div class="tajawal-regular flex-grow">
     <div class="m-6 ">
         @foreach ($history as $item)
         <div>

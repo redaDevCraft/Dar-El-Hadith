@@ -1,16 +1,17 @@
-<div class="relative tajawal-regular">
-    <div class=" animate-popUp flex flex-col justify-center items-center md:space-y-16 space-y-9 md:mx-10 m-6 rounded-lg md:py-[20%] h-60 bg-cover bg-center bg-no-repeat"
-        style="background-image: url('images/OpenDay3.jpg');">
-        <h3 class=" text-2xl md:text-6xl text-white text-center reem-kufi-regular">
-            دار الحديث بتلمسان..مهد العلماء و معقل الشهداء
-        </h3>
-        <button class="bg-green-700 text-white  hover:bg-white hover:text-emerald-900 border-2  text-nowrap font-bold p-2 md:p-3 rounded-lg  md:text-2xl  max-md:1/2  md:w-auto 
-             duration-500">
-            <a href="/history"> تعرف على دار الحديث
-
-            </a>
-        </button>
+<div>
+    <div class="relative tajawal-regular">
+        <div class="animate-popUp flex flex-col justify-center items-center md:space-y-16 space-y-9 md:mx-10 m-6 rounded-lg md:py-[20%] h-60 bg-cover bg-center bg-no-repeat lazyload"
+            data-bg="images/OpenDay3.jpg">
+            <h3 class="text-2xl md:text-6xl text-white text-center reem-kufi-regular">
+                دار الحديث بتلمسان..مهد العلماء و معقل الشهداء
+            </h3>
+            <button
+                class="bg-green-700 text-white hover:bg-white hover:text-emerald-900 border-2 text-nowrap font-bold p-2 md:p-3 rounded-lg md:text-2xl max-md:1/2 md:w-auto duration-500">
+                <a href="/history"> تعرف على دار الحديث </a>
+            </button>
+        </div>
     </div>
+
 
     <div class=" mt-5 md:mt-14">
         <h2 id="default-carousel" class="text-center font-bold text-4xl md:mr-12 text-green-900">
@@ -39,7 +40,7 @@
                     $isSmallWhiteLogo = $imagePath === asset('images/SmallWhiteLogo.svg');
                     @endphp
                     <img class="rounded-t-lg border-2 bg-green-700 {{ $isSmallWhiteLogo ? ' md:p-10 h-44 md:w-96 w-screen' : ' w-screen md:w-96 h-44' }}"
-                        src="{{ $imagePath }}" alt="" />
+                        src="{{ $imagePath }}" alt="" loading="lazy" />
                 </a>
 
                 <div class="p-5">
@@ -145,7 +146,8 @@
             <div class="transform hover:scale-105 transition-transform duration-300">
                 <div class="relative overflow-hidden rounded-lg shadow-lg">
                     <img src="images/school.jpeg"
-                        class="w-full h-64 md:h-80 object-cover transition-transform duration-500 hover:scale-110">
+                        class="w-full h-64 md:h-80 object-cover transition-transform duration-500 hover:scale-110"
+                        loading="lazy">
                     <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-75"></div>
                     <div class="absolute bottom-0 p-4 text-white">
                         <h2 class="text-3xl md:text-4xl font-bold">المدرسة التحضيرية</h2>
@@ -167,7 +169,8 @@
             <div class="transform hover:scale-105 transition-transform duration-300">
                 <div class="relative overflow-hidden rounded-lg shadow-lg">
                     <img src="images/mosque.jpeg"
-                        class="w-full h-64 md:h-80 object-cover transition-transform duration-500 hover:scale-110">
+                        class="w-full h-64 md:h-80 object-cover transition-transform duration-500 hover:scale-110"
+                        loading="lazy">
                     <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-75"></div>
                     <div class="absolute bottom-0 p-4 text-white">
                         <h2 class="text-3xl md:text-4xl font-bold">المصلى</h2>
@@ -187,7 +190,8 @@
             <div class="transform hover:scale-105 transition-transform duration-300">
                 <div class="relative overflow-hidden rounded-lg shadow-lg">
                     <img src="images/library.jpeg"
-                        class="w-full h-64 md:h-80 object-cover transition-transform duration-500 hover:scale-110">
+                        class="w-full h-64 md:h-80 object-cover transition-transform duration-500 hover:scale-110"
+                        loading="lazy">
                     <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-75"></div>
                     <div class="absolute bottom-0 p-4 text-white">
                         <h2 class="text-3xl md:text-4xl font-bold">المكتبة</h2>
@@ -210,8 +214,9 @@
             <!-- Quranic School Card -->
             <div class="transform hover:scale-105 transition-transform duration-300">
                 <div class="relative overflow-hidden rounded-lg shadow-lg">
-                    <img src="images/OpenDay3.jpg"
-                        class="w-full h-64 md:h-80 object-cover transition-transform duration-500 hover:scale-110">
+                    <img src="images/mousalla.jpg"
+                        class="w-full h-64 md:h-80 object-cover transition-transform duration-500 hover:scale-110"
+                        loading="lazy">
                     <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-75"></div>
                     <div class="absolute bottom-0 p-4 text-white">
                         <h2 class="text-3xl md:text-4xl font-bold">المدرسة القرآنية</h2>
@@ -315,7 +320,7 @@
                             <div
                                 class="p-2 flex items-center justify-center h-12 w-12 rounded-md bg-emerald-700 text-white mb-4">
                                 <!-- Replace with an appropriate icon -->
-                                <img src="images/prayIcon.svg" alt="pray">
+                                <img src="images/prayIcon.svg" alt="pray" loading="lazy">
                             </div>
                             <h3 class="text-lg font-medium text-gray-900">الصلوات اليومية </h3>
                             <p class="mt-2 text-base text-gray-500">
@@ -329,7 +334,7 @@
                             <div
                                 class="p-2 flex items-center justify-center h-12 w-12 rounded-md bg-emerald-700 text-white mb-4">
                                 <!-- Replace with an appropriate icon -->
-                                <img src="images/prayIcon.svg" alt="pray">
+                                <img src="images/prayIcon.svg" alt="pray" loading="lazy">
                             </div>
                             <h3 class="text-lg font-medium text-gray-900">صلاة الجمعة</h3>
                             <p class="mt-2 text-base text-gray-500">
@@ -343,7 +348,7 @@
                             <div
                                 class="p-2 flex items-center justify-center h-12 w-12 rounded-md bg-emerald-700 text-white mb-4">
                                 <!-- Replace with an appropriate icon -->
-                                <img src="images/learninIcon.svg" alt="">
+                                <img src="images/learninIcon.svg" alt="" loading="lazy">
                             </div>
                             <h3 class="text-lg font-medium text-gray-900">
                                 التربية و التعليم </h3>
@@ -359,7 +364,7 @@
                             <div
                                 class="p-2 flex items-center justify-center h-12 w-12 rounded-md bg-emerald-700 text-white mb-4">
                                 <!-- Replace with an appropriate icon -->
-                                <img src="images/marriageIcon.svg" alt="">
+                                <img src="images/marriageIcon.svg" alt="" loading="lazy">
                             </div>
                             <h3 class="text-lg font-medium text-gray-900">خدمات عقود الزواج</h3>
                             <p class="mt-2 text-base text-gray-500">
@@ -374,7 +379,7 @@
                             <div
                                 class="p-2 flex items-center justify-center h-12 w-12 rounded-md bg-emerald-700 text-white mb-4">
                                 <!-- Replace with an appropriate icon -->
-                                <img src="images/consultIcon.svg" alt="">
+                                <img src="images/consultIcon.svg" alt="" loading="lazy">
 
                             </div>
                             <h3 class="text-lg font-medium text-gray-900">الاستشارات الشرعية</h3>
@@ -389,8 +394,7 @@
                             <div
                                 class="p-2  flex items-center justify-center h-12 w-12 rounded-md bg-emerald-700 text-white mb-4">
                                 <!-- Replace with an appropriate icon -->
-                                <img src="images/zakatIcon.svg" alt="">
-
+                                <img src="images/zakatIcon.svg" alt="" loading="lazy">
                             </div>
                             <h3 class="text-lg font-medium text-gray-900">نشاطات اجتماعية </h3>
                             <p class="mt-2 text-base text-gray-500">
@@ -403,7 +407,24 @@
             </div>
         </div>
     </div>
+    <style>
+    .lazyload {
+        background-image: none;
+    }
 
+    .lazyloaded {
+        background-image: url('images/OpenDay3.jpg');
+    }
+    </style>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let lazyloadImages = document.querySelectorAll(".lazyload");
+        lazyloadImages.forEach(function(image) {
+            image.classList.add("lazyloaded");
+        });
+    });
+    </script>
 
 
     <script>

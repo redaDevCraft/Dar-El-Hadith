@@ -25,7 +25,7 @@ background-size : contain
     <script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.5.0/lite-youtube.js"></script>
 
     <livewire:partials.nav-bar />
-    <div class="flex-grow ">
+    <div class=" justify-center lg:max-w-full ">
         {{ $slot }}
     </div>
     <livewire:partials.footer />
