@@ -1,7 +1,7 @@
 <div>
     <div class="relative tajawal-regular">
-        <div class="animate-popUp flex flex-col justify-center items-center md:space-y-16 space-y-9 md:mx-10 m-6 rounded-lg md:py-[20%] h-60 bg-cover bg-center bg-no-repeat lazyload"
-            data-bg="images/OpenDay3.jpg">
+        <div
+            class="hero-section animate-popUp flex flex-col justify-center items-center md:space-y-16 space-y-9 md:mx-10 m-6 rounded-lg md:py-[20%] h-60 bg-cover bg-center bg-no-repeat lazyload">
             <h3 class="text-2xl md:text-6xl text-white text-center reem-kufi-regular">
                 دار الحديث بتلمسان..مهد العلماء و معقل الشهداء
             </h3>
@@ -71,10 +71,10 @@
         </div>
         <div class="flex justify-center mt-4">
             @if ($hasMoreNews)
-            <a wire:click="loadMore" href=""
+            <button wire:click="loadMore"
                 class="items-center px-3 py-2 text-xl font-medium text-center text-white bg-green-700 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-emerald-300 dark:bg-emerald-600 dark:hover:bg-emerald-700 dark:focus:ring-emerald-800">
                 ↓ المزيد
-            </a>
+            </button>
             @else
             <button
                 class="items-center px-3 py-2 text-xl font-medium text-center text-white bg-gray-500 rounded-lg cursor-not-allowed"
@@ -445,6 +445,16 @@
         }
     });
     </script>
+
+    <style>
+    .hero-section {
+        background-image: url('images/OpenDay3.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    </style>
+
 
 
 </div>
