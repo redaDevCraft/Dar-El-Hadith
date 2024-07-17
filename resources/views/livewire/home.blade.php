@@ -71,7 +71,7 @@
         </div>
         <div class="flex justify-center mt-4">
             @if ($hasMoreNews)
-            <a wire:click="loadMore" href="#"
+            <a wire:click="loadMore" href=""
                 class="items-center px-3 py-2 text-xl font-medium text-center text-white bg-green-700 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-emerald-300 dark:bg-emerald-600 dark:hover:bg-emerald-700 dark:focus:ring-emerald-800">
                 ↓ المزيد
             </a>
