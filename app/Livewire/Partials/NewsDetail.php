@@ -13,7 +13,7 @@ class NewsDetail extends Component
     public function mount($id)
     {
         $this->news = news::find($id);
-        $this->featuredNews = news::latest()->take(5)->get(); // Fetch 3 latest items
+        $this->featuredNews = news::latest()->where('id', '!=', $id)->take(5)->get(); // Fetch 3 latest items
 
 
     }
