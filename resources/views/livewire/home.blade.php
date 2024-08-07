@@ -1,8 +1,9 @@
 <div>
     <div class="relative tajawal-regular ">
         <div
-            class="px-10 hero-section animate-popUp flex flex-col justify-center items-center lg:space-y-16 space-y-9 lg:mx-10 p-[100px] lg:p-[350px] bg-contain bg-center bg-no-repeat">
-            <h3 class="text-4xl lg:text-6xl  text-white text-center reem-kufi-regular lg:text-nowrap">
+            class="px-10
+             hero-section animate-popUp flex flex-col justify-center items-center lg:space-y-16 space-y-9 lg:mx-10 p-[100px] lg:p-[350px] bg-contain bg-center bg-no-repeat">
+            <h3 class="text-3xl lg:text-6xl  text-white text-center reem-kufi-regular lg:text-nowrap">
                 دار الحديث بتلمسان..مهد العلماء و معقل الشهداء
             </h3>
             <button
@@ -333,7 +334,7 @@
             </div>
 
             <div class="mt-10">
-                <div class="grid grid-cols-1 lg:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1  lg:grid-cols-3 gap-8">
 
                     <!-- Service 1 -->
                     <div class="bg-white shadow-lg rounded-lg overflow-hidden">
