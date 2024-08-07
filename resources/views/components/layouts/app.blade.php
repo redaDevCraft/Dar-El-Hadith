@@ -21,10 +21,9 @@
     @vite('resources/css/app.css')
 </head>
 
-<body class="antialiased min-h-screen flex flex-col tajawal-regular" style="background-image: url('images/mainBackground3.jpg');
-background-size : contain
-">
+<body class="antialiased min-h-screen flex flex-col tajawal-regular">
     <script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.5.0/lite-youtube.js"></script>
+
 
     <livewire:partials.nav-bar />
     <div class=" justify-center lg:max-w-full ">

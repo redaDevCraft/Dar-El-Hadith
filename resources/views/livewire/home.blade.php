@@ -1,8 +1,8 @@
 <div>
-    <div class="relative tajawal-regular">
+    <div class="relative tajawal-regular rounded-xl">
         <div
-            class="hero-section animate-popUp flex flex-col justify-center items-center md:space-y-16 space-y-9 md:mx-10 m-6 rounded-lg md:py-[20%] h-60 bg-cover bg-center bg-no-repeat lazyload">
-            <h3 class="text-2xl md:text-6xl text-white text-center reem-kufi-regular">
+            class="hero-section animate-popUp flex flex-col justify-center items-center md:space-y-16 space-y-9 md:mx-10 m-6 p-[100px] md:p-[350px] bg-contain bg-center bg-no-repeat lazyload">
+            <h3 class="text-2xl md:text-6xl text-white text-center reem-kufi-regular md:text-nowrap">
                 دار الحديث بتلمسان..مهد العلماء و معقل الشهداء
             </h3>
             <button
@@ -40,8 +40,9 @@
                     $isSmallWhiteLogo = $imagePath === asset('images/SmallWhiteLogo.svg');
                     @endphp
                     <img class="rounded-t-lg border-2 bg-green-700 {{ $isSmallWhiteLogo ? ' md:p-10 h-44 md:w-96 w-screen' : ' w-screen md:w-96 h-44' }}"
-                        src="{{ $imagePath }}" alt="" loading="lazy" />
+                        src="{{ $imagePath }}" alt="" loading="lazy" data-fallback />
                 </a>
+
 
                 <div class="p-5">
                     <a href="/news/{{ $additional->id }}">
@@ -71,9 +72,19 @@
         </div>
         <div class="flex justify-center mt-4">
             @if ($hasMoreNews)
-            <button wire:click="loadMore"
+            <button wire:click="loadMore" wire:loading.attr="disabled"
                 class="items-center px-3 py-2 text-xl font-medium text-center text-white bg-green-700 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-emerald-300 dark:bg-emerald-600 dark:hover:bg-emerald-700 dark:focus:ring-emerald-800">
-                ↓ المزيد
+                <span wire:loading.remove>↓ المزيد</span>
+                <span wire:loading>
+                    <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4">
+                        </circle>
+                        <path class="opacity-75" fill="currentColor"
+                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                        </path>
+                    </svg>
+                </span>
             </button>
             @else
             <button
@@ -83,6 +94,7 @@
             </button>
             @endif
         </div>
+
     </div>
 
 
@@ -141,7 +153,7 @@
         </div>
 
         <!-- Grid Section -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 tajawal-regular">
+        <div class="grid grid-cols-1 md:mx-[10rem] items-center  gap-8 md:gap-32 tajawal-regular">
             <!-- Preparatory School Card -->
             <div class="transform hover:scale-105 transition-transform duration-300">
                 <div class="relative overflow-hidden rounded-lg shadow-lg">
@@ -276,9 +288,18 @@
     @if ($videos->count() >= 1)
     <div class="w-full text-center mt-2">
         @if ($hasMoreVideos)
-        <button wire:click="loadMoreVids"
+        <button wire:click="loadMoreVids" wire:loading.attr="disabled"
             class="items-center px-3 py-2 text-xl font-medium text-center text-white bg-green-700 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-emerald-300 dark:bg-emerald-600 dark:hover:bg-emerald-700 dark:focus:ring-emerald-800">
-            ↓ تحميل المزيد
+            <span wire:loading.remove>↓ تحميل المزيد</span>
+            <span wire:loading>
+                <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor"
+                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                    </path>
+                </svg>
+            </span>
         </button>
         @else
         <button
@@ -407,6 +428,7 @@
             </div>
         </div>
     </div>
+
     <style>
     .lazyload {
         background-image: none;
@@ -449,7 +471,7 @@
     <style>
     .hero-section {
         background-image: url('images/OpenDay3.jpg');
-        background-size: cover;
+        background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
     }

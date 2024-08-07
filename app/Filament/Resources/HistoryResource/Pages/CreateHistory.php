@@ -5,6 +5,7 @@ namespace App\Filament\Resources\HistoryResource\Pages;
 use App\Filament\Resources\HistoryResource;
 use Filament\Actions;
 use Filament\Resources\Pages\CreateRecord;
+use Illuminate\Support\Facades\DB;
 
 class CreateHistory extends CreateRecord
 {
@@ -30,6 +31,6 @@ class CreateHistory extends CreateRecord
     protected function historyCount(): int
     {
         // Replace 'history_table' with the actual name of your history table
-        return \DB::table('histories')->count();
+        return DB::table('histories')->count();
     }
 }

@@ -1,13 +1,12 @@
 <div class="m-6 tajawal-regular" id="main-div">
     <div class="row">
         <div>
-            <div id="custom-controls-gallery" class="relative mx-[10%] border-2 rounded-md" data-carousel="slide">
+            <div id="custom-controls-gallery" class="relative mx-[10%]  rounded-md" data-carousel="slide">
                 <!-- Carousel wrapper -->
                 <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
                     <!-- Carousel items -->
                     @foreach($news->images as $image)
-                    <div class="hidden duration-700 ease-in-out bg-gradient-to-t from-green-900 to-green-100"
-                        data-carousel-item>
+                    <div class="hidden duration-700 ease-in-out " data-carousel-item>
                         @if($news->images)
                         <div class="mt-2 flex flex-wrap">
                             <img src="{{ asset('storage/' . $image) }}" alt="{{ $news->title }}"
@@ -30,7 +29,7 @@
                 </div>
 
                 <!-- Carousel controls -->
-                <div class="flex justify-center items-center p-2 bg-gray-200">
+                <div class="flex justify-center items-center p-2 ">
                     <button type="button"
                         class="flex justify-center items-center me-4 h-full cursor-pointer group focus:outline-none"
                         data-carousel-prev>
@@ -61,18 +60,16 @@
             </div>
         </div>
 
-        <div class="md:flex flex-col md:flex-row-reverse md:justify-between mt-6 relative">
+        <div class="flex flex-col  justify-center items-center mt-6 relative">
 
-            <div class=" mt-3 md:overflow-y-auto text-right  text-2xl md:text-3xl">
+            <div class=" mt-3 text-right  text-2xl md:text-3xl">
                 <h1 class="text-3xl font-serif text-green-900 text-center mt-9" id="news-title">{{ $news->title }}</h1>
 
                 <div id="news-content" class="prose mt-9 text-2xl">
                     {!! \Illuminate\Support\Str::markdown($news->content) !!}
                 </div>
             </div>
-            <div style="background-image: url('images/mainBackground3.jpg');
-background-size : contain
-" class=" h-screen overflow-auto  mt-16  sticky top-0 md:mr-48 border-r-2 bg-gray-50">
+            <div class=" h-screen overflow-auto  mt-16 ">
                 <aside class="px-4 overflow-auto md:mt-0" dir="rtl">
                     <h2 class="text-3xl font-bold  mb-4 text-right">أخبار إضافية</h2>
 
