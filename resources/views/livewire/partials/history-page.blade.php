@@ -1,15 +1,15 @@
 <!-- Livewire Component - partials/history-page.blade.php -->
 <div class="tajawal-regular flex-grow">
-    <div class="m-6 ">
+    <div class="lg:m-6 ">
         @foreach ($history as $item)
-        <div>
-            <div class="tajawal-regular md:space-y-16 space-y-9 mt-2  py-[30%] rounded-lg " style=" background-image: url('images/OpenDay3.jpg'); background-size: cover; background-position:
+        <div class="">
+            <div class="tajawal-regular md:space-y-16 space-y-9 mt-2  py-[30%] lg:rounded-lg rounded-none" style=" background-image: url('images/OpenDay3.jpg'); background-size: cover; background-position:
                 center; background-repeat: no-repeat;">
                 <h1 dir="auto" id="news-title"
-                    class="font-bold text-2xl md:text-6xl text-white text-center text-nowrap">
+                    class="m-4 font-bold text-2xl md:text-6xl text-white text-center text-nowrap">
                     {{$item->title}}
                 </h1>
-                <h4 dir="auto" id="news-subtitle" class="text-white font-bold md:text-4xl text-center">
+                <h4 dir="auto" id="news-subtitle" class="m-4 text-white font-bold md:text-4xl text-center">
                     {{$item->subtitle}}
                 </h4>
                 </divclass=>
