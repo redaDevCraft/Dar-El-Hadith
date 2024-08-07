@@ -4,6 +4,9 @@
 <head>
     <meta charset="utf-8" />
     <meta name="application-name" content="{{ config('app.name') }}" />
+    <meta name="description"
+        content="دار الحديث هي مؤسسة تابعة لجمعية العلماء المسلمين،  يقع في تلمسان بالجزائر يتكون من مسجد ، مدرسة قرآنية و أخرى تحضيرية، مكتبة مطالعة و مسرح،  تقوم المؤسسة بالعديد من النشاطات الإجتماعية و المساهمة في بناء المجتمع و" />
+
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="preload" href="images/OpenDay3.jpg" as="image">

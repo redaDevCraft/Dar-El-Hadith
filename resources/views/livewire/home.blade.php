@@ -157,7 +157,7 @@
             <!-- Preparatory School Card -->
             <div class="transform hover:scale-105 transition-transform duration-300">
                 <div class="relative overflow-hidden rounded-lg shadow-lg">
-                    <img src="images/school.jpeg"
+                    <img src="images/school.jpeg" alt="Preparatory School"
                         class="w-full h-64 md:h-80 object-cover transition-transform duration-500 hover:scale-110"
                         loading="lazy">
                     <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-75"></div>
@@ -180,7 +180,7 @@
             <!-- Prayer Hall Card -->
             <div class="transform hover:scale-105 transition-transform duration-300">
                 <div class="relative overflow-hidden rounded-lg shadow-lg">
-                    <img src="images/mosque.jpeg"
+                    <img src="images/mosque.jpeg" alt="Prayer Hall"
                         class="w-full h-64 md:h-80 object-cover transition-transform duration-500 hover:scale-110"
                         loading="lazy">
                     <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-75"></div>
@@ -201,7 +201,7 @@
             <!-- Library Card -->
             <div class="transform hover:scale-105 transition-transform duration-300">
                 <div class="relative overflow-hidden rounded-lg shadow-lg">
-                    <img src="images/library.jpeg"
+                    <img src="images/library.jpeg" alt="Library"
                         class="w-full h-64 md:h-80 object-cover transition-transform duration-500 hover:scale-110"
                         loading="lazy">
                     <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-75"></div>
@@ -226,7 +226,7 @@
             <!-- Quranic School Card -->
             <div class="transform hover:scale-105 transition-transform duration-300">
                 <div class="relative overflow-hidden rounded-lg shadow-lg">
-                    <img src="images/mousalla.jpg"
+                    <img src="images/mousalla.jpg" alt="Quranic School"
                         class="w-full h-64 md:h-80 object-cover transition-transform duration-500 hover:scale-110"
                         loading="lazy">
                     <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-75"></div>
@@ -369,7 +369,9 @@
                             <div
                                 class="p-2 flex items-center justify-center h-12 w-12 rounded-md bg-emerald-700 text-white mb-4">
                                 <!-- Replace with an appropriate icon -->
-                                <img src="images/learninIcon.svg" alt="" loading="lazy">
+                                <img src="images/learninIcon.svg" alt="
+                                learning
+                                " loading="lazy">
                             </div>
                             <h3 class="text-lg font-medium text-gray-900">
                                 التربية و التعليم </h3>
@@ -385,7 +387,7 @@
                             <div
                                 class="p-2 flex items-center justify-center h-12 w-12 rounded-md bg-emerald-700 text-white mb-4">
                                 <!-- Replace with an appropriate icon -->
-                                <img src="images/marriageIcon.svg" alt="" loading="lazy">
+                                <img src="images/marriageIcon.svg" alt="marriage Services" loading="lazy">
                             </div>
                             <h3 class="text-lg font-medium text-gray-900">خدمات عقود الزواج</h3>
                             <p class="mt-2 text-base text-gray-500">
@@ -400,7 +402,7 @@
                             <div
                                 class="p-2 flex items-center justify-center h-12 w-12 rounded-md bg-emerald-700 text-white mb-4">
                                 <!-- Replace with an appropriate icon -->
-                                <img src="images/consultIcon.svg" alt="" loading="lazy">
+                                <img src="images/consultIcon.svg" alt="consulting" loading="lazy">
 
                             </div>
                             <h3 class="text-lg font-medium text-gray-900">الاستشارات الشرعية</h3>
@@ -415,7 +417,7 @@
                             <div
                                 class="p-2  flex items-center justify-center h-12 w-12 rounded-md bg-emerald-700 text-white mb-4">
                                 <!-- Replace with an appropriate icon -->
-                                <img src="images/zakatIcon.svg" alt="" loading="lazy">
+                                <img src="images/zakatIcon.svg" alt="zakat" loading="lazy">
                             </div>
                             <h3 class="text-lg font-medium text-gray-900">نشاطات اجتماعية </h3>
                             <p class="mt-2 text-base text-gray-500">
