@@ -16,7 +16,7 @@
             </div>
             <div class="flex flex-col justify-between items-center mt-6 relative ">
                 <div class="prose  mt-3  md:max-w-70vw text-2xl ">
-                    <div dir="auto" id="news-content" class="custom-scrollbar select-none ">
+                    <div dir="auto" id="news-content" class="custom-scrollbar select-none m-4">
                         {!! \Illuminate\Support\Str::markdown($item->content) !!}
                         <button id="scroll-to-top"
                             class=" hover:bg-emerald-400 fixed bottom-10 right-10 bg-green-600 text-white px-3 py-1 rounded-full hidden ">

@@ -15,13 +15,6 @@
                         @elseif (!(isset($news->images)))
                         <div class="mt-2 flex flex-wrap">
                             <p>no image</p>
-                            <script>
-                            public
-
-                            function render() {
-                                console.log('No image found');
-                            }
-                            </script>
                         </div>
                         @endif
                     </div>
@@ -65,7 +58,7 @@
             <div class=" mt-3 text-right  text-2xl md:text-3xl">
                 <h1 class="text-3xl font-serif text-green-900 text-center mt-9" id="news-title">{{ $news->title }}</h1>
 
-                <div id="news-content" class="prose mt-9 text-2xl">
+                <div id="news-content" class="prose mt-9 text-2xl m-4">
                     {!! \Illuminate\Support\Str::markdown($news->content) !!}
                 </div>
             </div>
