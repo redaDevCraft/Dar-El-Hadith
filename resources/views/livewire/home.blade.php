@@ -1,8 +1,8 @@
 <div>
-    <div class="relative tajawal-regular rounded-xl">
+    <div class="relative tajawal-regular ">
         <div
-            class="hero-section animate-popUp flex flex-col justify-center items-center md:space-y-16 space-y-9 md:mx-10 m-6 p-[100px] md:p-[350px] bg-contain bg-center bg-no-repeat lazyload">
-            <h3 class="text-2xl md:text-6xl text-white text-center reem-kufi-regular md:text-nowrap">
+            class="hero-section animate-popUp flex flex-col justify-center items-center md:space-y-16 space-y-9 md:mx-10 mx-6 p-[100px] md:p-[350px] bg-contain bg-center bg-no-repeat">
+            <h3 class="text-lg md:text-6xl text-white text-center reem-kufi-regular md:text-nowrap">
                 دار الحديث بتلمسان..مهد العلماء و معقل الشهداء
             </h3>
             <button
@@ -472,12 +472,16 @@
 
     <style>
     .hero-section {
+        background-color: #f0f0f0;
+        /* Placeholder color */
         background-image: url('images/OpenDay3.jpg');
-        background-size: contain;
+        background-size: cover;
+        /* Use cover to ensure the image covers the section */
         background-position: center;
         background-repeat: no-repeat;
     }
     </style>
+
 
 
 
