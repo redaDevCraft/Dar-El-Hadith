@@ -300,10 +300,10 @@
     <div class="flex flex-wrap lg:flex-col justify-center lg:justify-start gap-4 rounded-lg">
         @if ($videos->count() > 0)
         @foreach ($videos as $video)
-        <div class=" lg:w-1/2 lg:h-1/2 lg:ml-10  rounded-lg">
+        <div class=" lg:w-1/2 lg:h-1/2 lg:ml-[13rem] rounded-lg">
             <div class="video-container ">
                 <lite-youtube short videoid="{{ $video->url }}" playlabel="Play Video: {{ $video->title }}"
-                    class="lg:rounded-lg bg-contain rounded-lg w-[380px] h-[200px] lg:w-[1270px] lg:h-[400px] " style="background-image: url('https://img.youtube.com/vi/{{ $video->url }}/hqdefault.jpg'); 
+                    class="lg:rounded-lg bg-contain rounded-lg w-[380px] h-[200px] lg:w-[59rem] lg:h-[35rem] " style="background-image: url('https://img.youtube.com/vi/{{ $video->url }}/hqdefault.jpg'); 
                     ">
                 </lite-youtube>
             </div>
