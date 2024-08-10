@@ -143,7 +143,7 @@
     <div id="marafiq" dir="auto" class="container mx-auto py-10 px-4">
         <!-- Title and Description Section -->
         <div class="text-center mb-10">
-            <h2 class=" text-4xl lg:text-5xl text-green-900 font-bold mb-4">
+            <h2 class="text-4xl lg:text-5xl text-green-900 font-bold mb-4">
                 مرافق دار الحديث
             </h2>
             <p class="text-lg lg:text-xl text-gray-700 max-w-3xl mx-auto">
@@ -154,10 +154,11 @@
         </div>
 
         <!-- Grid Section -->
-        <div class="grid grid-cols-1 lg:mx-[10rem] items-center  gap-8 lg:gap-32 tajawal-regular">
+        <div class="grid grid-cols-1 lg:mx-[10rem] items-center gap-8 lg:gap-32 tajawal-regular">
+            <!-- Preparatory School Card -->
             <!-- Preparatory School Card -->
             <div class="transform hover:scale-105 transition-transform duration-300">
-                <div class="relative overflow-hidden rounded-lg shadow-lg">
+                <div class="relative overflow-hidden rounded-t-lg shadow-lg">
                     <img src="images/school.jpeg" alt="Preparatory School"
                         class="w-full h-64 lg:h-80 object-cover transition-transform duration-500 hover:scale-110"
                         loading="lazy">
@@ -166,21 +167,25 @@
                         <h2 class="text-3xl lg:text-4xl font-bold">المدرسة التحضيرية</h2>
                     </div>
                 </div>
-                <div dir="rtl" class="p-6  bg-gradient-to-t from-gray-50 to-gray-200  shadow-lg rounded-lg space-y-4">
-                    <p class="lg:text-3xl ">
-                        تستقبل المدرسة الأطفال الصغار البالغين من العمر أربع سنوات، وخمس سنوات، وأكثر، ويمتاز البرنامج
-                        السنوي
-                        بالطابع الديني والتركيز على القرآن الكريم والحديث الشريف والآداب الإسلامية بالإضافة الى مواد
-                        الحساب
-                        و
-                        مادة المحادثة المستوحاة من واقع التلميذ الاجتماعي والأسري.
-                    </p>
+                <div dir="rtl" class="p-6 bg-gradient-to-t from-gray-50 to-gray-200 shadow-lg rounded-b-lg space-y-4">
+                    <div class="flex items-center">
+                        <p class="lg:text-3xl flex-1 truncate-text" id="school-text">
+                            تستقبل المدرسة الأطفال الصغار البالغين من العمر أربع سنوات، وخمس سنوات، وأكثر، ويمتاز
+                            البرنامج
+                            السنوي
+                            بالطابع الديني والتركيز على القرآن الكريم والحديث الشريف والآداب الإسلامية بالإضافة الى مواد
+                            الحساب و
+                            مادة المحادثة المستوحاة من واقع التلميذ الاجتماعي والأسري.
+                        </p>
+                        <button id="school-button" class="text-green-700 lg:text-3xl ml-4"
+                            onclick="toggleText('school-text', 'school-button')">اقرأ المزيد</button>
+                    </div>
                 </div>
             </div>
 
             <!-- Prayer Hall Card -->
             <div class="transform hover:scale-105 transition-transform duration-300">
-                <div class="relative overflow-hidden rounded-lg shadow-lg">
+                <div class="relative overflow-hidden rounded-t-lg shadow-lg">
                     <img src="images/mosque.jpeg" alt="Prayer Hall"
                         class="w-full h-64 lg:h-80 object-cover transition-transform duration-500 hover:scale-110"
                         loading="lazy">
@@ -189,19 +194,25 @@
                         <h2 class="text-3xl lg:text-4xl font-bold">المصلى</h2>
                     </div>
                 </div>
-                <div dir="rtl" class="p-6  bg-gradient-to-t from-gray-50 to-gray-200 shadow-lg rounded-lg space-y-4">
-                    <p class="lg:text-3xl ">
-                        يقع في الطابق الأرضي , تقام فيه الصلوات الخمس , صلاة الجمعة من طرف الشيخ بن يونس آيت سالم و صلاة
-                        التراويح في رمضان بالإضافة إلى العديد من الأنشطة مثل حلقات تلاوة القرآن الكريم و دروس خفيفة من
-                        طرف
-                        أساتذة وشيوخ لتزكية النفوس و هز القلوب.
-                    </p>
+                <div dir="rtl" class="p-6 bg-gradient-to-t from-gray-50 to-gray-200 shadow-lg rounded-b-lg space-y-4">
+                    <div class="flex items-center">
+                        <p class="lg:text-3xl flex-1 truncate-text" id="mosque-text">
+                            يقع في الطابق الأرضي , تقام فيه الصلوات الخمس , صلاة الجمعة من طرف الشيخ بن يونس آيت سالم و
+                            صلاة
+                            التراويح في رمضان بالإضافة إلى العديد من الأنشطة مثل حلقات تلاوة القرآن الكريم و دروس خفيفة
+                            من
+                            طرف
+                            أساتذة وشيوخ لتزكية النفوس و هز القلوب.
+                        </p>
+                        <button id="mosque-button" class="text-green-700 lg:text-3xl ml-4"
+                            onclick="toggleText('mosque-text', 'mosque-button')">اقرأ المزيد</button>
+                    </div>
                 </div>
             </div>
 
             <!-- Library Card -->
             <div class="transform hover:scale-105 transition-transform duration-300">
-                <div class="relative overflow-hidden rounded-lg shadow-lg">
+                <div class="relative overflow-hidden rounded-t-lg shadow-lg">
                     <img src="images/library.jpeg" alt="Library"
                         class="w-full h-64 lg:h-80 object-cover transition-transform duration-500 hover:scale-110"
                         loading="lazy">
@@ -210,49 +221,64 @@
                         <h2 class="text-3xl lg:text-4xl font-bold">المكتبة</h2>
                     </div>
                 </div>
-                <div dir="rtl" class="p-6  bg-gradient-to-t from-gray-50 to-gray-200  shadow-lg rounded-lg space-y-4">
-                    <p class="lg:text-3xl ">
-                        تقع في الطابق الأول، وتحتوي على حوالي خمسة آلاف كتاب في مجالات دينية متنوعة كالتفسير، الفقه،
-                        والعقيدة،
-                        بالإضافة إلى كتب الحركة الإصلاحية واللغة العربية. تضم المكتبة أيضًا مخطوطات قيمة مثل مخطوطة
-                        المصحف
-                        الشريف وصحيح البخاري. تحتوي المكتبة على قاعة للمطالعة، قاعة محاضرات و مكان للإعلام الآلي مزودة
-                        بالإنترنت. تقدم المكتبة دروس دعم ودورات تكوينية في الإعلام الآلي، وتفتح أبوابها يومياً من 9
-                        صباحاً حتى
-                        5 مساءاً.
-                    </p>
+                <div dir="rtl" class="p-6 bg-gradient-to-t from-gray-50 to-gray-200 shadow-lg rounded-b-lg space-y-4">
+                    <div class="flex items-center">
+                        <p class="lg:text-3xl flex-1 truncate-text" id="library-text">
+                            تقع في الطابق الأول، وتحتوي على حوالي خمسة آلاف كتاب في مجالات دينية متنوعة كالتفسير، الفقه،
+                            والعقيدة،
+                            بالإضافة إلى كتب الحركة الإصلاحية واللغة العربية. تضم المكتبة أيضًا مخطوطات قيمة مثل مخطوطة
+                            المصحف
+                            الشريف وصحيح البخاري. تحتوي المكتبة على قاعة للمطالعة، قاعة محاضرات و مكان للإعلام الآلي
+                            مزودة
+                            بالإنترنت. تقدم المكتبة دروس دعم ودورات تكوينية في الإعلام الآلي، وتفتح أبوابها يومياً من 9
+                            صباحاً حتى
+                            5 مساءاً.
+                        </p>
+                        <button id="library-button" class="text-green-700 lg:text-3xl ml-4"
+                            onclick="toggleText('library-text', 'library-button')">اقرأ المزيد</button>
+                    </div>
                 </div>
             </div>
 
             <!-- Quranic School Card -->
             <div class="transform hover:scale-105 transition-transform duration-300">
-                <div class="relative overflow-hidden rounded-lg shadow-lg">
+                <div class="relative overflow-hidden rounded-t-lg shadow-lg">
                     <img src="images/mousalla.jpg" alt="Quranic School"
-                        class="w-full h-64 lg:h-80 object-cover transition-transform duration-500 hover:scale-110"
+                        class="w-full h-64 lg:h-[30rem] object-cover transition-transform duration-500 hover:scale-110"
                         loading="lazy">
                     <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-75"></div>
                     <div class="absolute bottom-0 p-4 text-white">
                         <h2 class="text-3xl lg:text-4xl font-bold">المدرسة القرآنية</h2>
                     </div>
                 </div>
-                <div dir="rtl" class="p-6 bg-gradient-to-t from-gray-50 to-gray-200 shadow-lg rounded-lg space-y-4">
-                    <p class="lg:text-3xl ">
-                        تم افتتاح المدرسة القرآنية لدار الحديث بقاعة النساء بالطابق السفلي في مارس 1996 من قبل الجمعية
-                        الدينية
-                        والثقافية والعلمية. تطوع الشيخ محمد بوكلي حسن، حفيد الشيخ بوشناق، لتعليم القرآن فيها. يعمل محمد
-                        الآن
-                        محاسبًا، وشارك معه في التدريس عبد الحكيم مير والبشير مرابط وعبد الإله عراوي. تفتح المدرسة
-                        أبوابها بعد
-                        صلاة العصر حتى العشاء للعاملين، وفي أوقات أخرى لغير العاملين. تشهد المدرسة إقبالاً متزايداً من
-                        مختلف
-                        الأعمار، حتى أن القاعة تضيق أحياناً بهم. توفر الجمعية التدفئة والتكييف وتكرم الطلبة. تخرج العديد
-                        من
-                        الطلبة الذين يحفظون القرآن ويؤمون الناس في الصلوات بالمدينة.
-                    </p>
+                <div dir="rtl" class="p-6 bg-gradient-to-t from-gray-50 to-gray-200 shadow-lg rounded-b-lg space-y-4">
+                    <div class="flex items-center">
+                        <p class="lg:text-3xl flex-1 truncate-text" id="quranic-text">
+                            تم افتتاح المدرسة القرآنية لدار الحديث بقاعة النساء بالطابق السفلي في مارس 1996 من قبل
+                            الجمعية
+                            الدينية
+                            والثقافية والعلمية. تطوع الشيخ محمد بوكلي حسن، حفيد الشيخ بوشناق، لتعليم القرآن فيها. يعمل
+                            محمد
+                            الآن
+                            محاسبًا، وشارك معه في التدريس عبد الحكيم مير والبشير مرابط وعبد الإله عراوي. تفتح المدرسة
+                            أبوابها بعد
+                            صلاة العصر حتى العشاء للعاملين، وفي أوقات أخرى لغير العاملين. تشهد المدرسة إقبالاً متزايداً
+                            من
+                            مختلف
+                            الأعمار، حتى أن القاعة تضيق أحياناً بهم. توفر الجمعية التدفئة والتكييف وتكرم الطلبة. تخرج
+                            العديد
+                            من
+                            الطلبة الذين يحفظون القرآن ويؤمون الناس في الصلوات بالمدينة.
+                        </p>
+                        <button id="quranic-button" class="text-green-700 lg:text-3xl ml-4"
+                            onclick="toggleText('quranic-text', 'quranic-button')">اقرأ المزيد</button>
+                    </div>
                 </div>
             </div>
+
         </div>
     </div>
+
 
 
 
@@ -450,6 +476,28 @@
         });
     });
     </script>
+
+    <script>
+    function toggleText(id, buttonId) {
+        const textElement = document.getElementById(id);
+        const buttonElement = document.getElementById(buttonId);
+
+        if (textElement.classList.contains('truncate-text')) {
+            textElement.classList.remove('truncate-text');
+            buttonElement.style.display = 'none'; // Hide the button
+        } else {
+            textElement.classList.add('truncate-text');
+            buttonElement.style.display = 'inline'; // Show the button
+        }
+    }
+    </script>
+    <style>
+    .truncate-text {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    </style>
 
 
     <script>

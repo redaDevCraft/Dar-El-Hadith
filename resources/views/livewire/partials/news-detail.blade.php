@@ -1,9 +1,9 @@
 <div class="m-6 tajawal-regular" id="main-div">
     <div class="row">
         <div>
-            <div id="custom-controls-gallery" class="relative mx-[10%]  rounded-md" data-carousel="slide">
+            <div id="custom-controls-gallery" class="relative mx-[10%]  rounded-lg" data-carousel="slide">
                 <!-- Carousel wrapper -->
-                <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+                <div class="relative h-56 overflow-hidden rounded-lg lg:h-96">
                     <!-- Carousel items -->
                     @foreach($news->images as $image)
                     <div class="hidden duration-700 ease-in-out " data-carousel-item>
@@ -55,7 +55,7 @@
 
         <div class="flex flex-col  justify-center items-center mt-6 relative">
 
-            <div class=" mt-3 text-right  text-2xl md:text-3xl">
+            <div class=" mt-3 text-right  text-2xl lg:text-3xl">
                 <h1 class="text-3xl font-serif text-green-900 text-center mt-9" id="news-title">{{ $news->title }}</h1>
 
                 <div id="news-content" class="prose mt-9 text-2xl m-4">
@@ -63,7 +63,7 @@
                 </div>
             </div>
             <div class=" h-screen overflow-auto  mt-16 ">
-                <aside class="px-4 overflow-auto md:mt-0" dir="rtl">
+                <aside class="px-4 overflow-auto lg:mt-0" dir="rtl">
                     <h2 class="text-3xl font-bold  mb-4 text-right">أخبار إضافية</h2>
 
                     <div class="">

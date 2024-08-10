@@ -3,19 +3,19 @@
     <div class="lg:m-6 ">
         @foreach ($history as $item)
         <div class="">
-            <div class="tajawal-regular md:space-y-16 space-y-9 mt-2  py-[30%] lg:rounded-lg rounded-none" style=" background-image: url('images/OpenDay3.jpg'); background-size: cover; background-position:
+            <div class="tajawal-regular lg:space-y-16 space-y-9 mt-2  py-[30%] lg:rounded-lg rounded-none" style=" background-image: url('images/OpenDay3.jpg'); background-size: cover; background-position:
                 center; background-repeat: no-repeat;">
                 <h1 dir="auto" id="news-title"
-                    class="m-4 font-bold text-2xl md:text-6xl text-white text-center text-nowrap">
+                    class="m-4 font-bold text-2xl lg:text-6xl text-white text-center text-nowrap">
                     {{$item->title}}
                 </h1>
-                <h4 dir="auto" id="news-subtitle" class="m-4 text-white font-bold md:text-4xl text-center">
+                <h4 dir="auto" id="news-subtitle" class="m-4 text-white font-bold lg:text-4xl text-center">
                     {{$item->subtitle}}
                 </h4>
                 </divclass=>
             </div>
             <div class="flex flex-col justify-between items-center mt-6 relative ">
-                <div class="prose  mt-3  md:max-w-70vw text-2xl ">
+                <div class="prose  mt-3  lg:max-w-70vw text-2xl ">
                     <div dir="auto" id="news-content" class="custom-scrollbar select-none m-4">
                         {!! \Illuminate\Support\Str::markdown($item->content) !!}
                         <button id="scroll-to-top"
@@ -26,7 +26,7 @@
 
                 </div>
                 <div class="  ">
-                    <aside class="px-4 mt-12 md:mt-0" dir="rtl">
+                    <aside class="px-4 mt-12 lg:mt-0" dir="rtl">
                         <div class="">
                             <h2 class="text-3xl   mb-4 text-right">أخبار إضافية</h2>
                             <div class="flex flex-col gap-3  mt-5">
