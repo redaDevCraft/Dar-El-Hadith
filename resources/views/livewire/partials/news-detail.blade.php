@@ -58,7 +58,7 @@
             <div class=" mt-3 text-right  text-2xl lg:text-3xl">
                 <h1 class="text-3xl font-serif text-green-900 text-center mt-9" id="news-title">{{ $news->title }}</h1>
 
-                <div id="news-content" class="prose mt-9 text-2xl m-4">
+                <div id="news-content" class="prose mt-9 lg:text-2xl m-4">
                     {!! \Illuminate\Support\Str::markdown($news->content) !!}
                 </div>
             </div>
