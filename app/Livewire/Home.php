@@ -78,6 +78,21 @@ class Home extends Component
         $this->hasMoreNews = $this->news->count() < News::count();
     }
 
+    public function incrementViews($newsId)
+    {
+        // Find the news article by ID
+        $newsItem = News::find($newsId);
+
+        // Check if the news item exists
+        if ($newsItem) {
+            // Increment the views count
+            $newsItem->incrementViewCount();
+
+            // Redirect to the news detail page (adjust the route as needed)
+            return redirect()->route('news.show', ['id' => $newsItem->id]);
+        }
+    }
+
     public function render()
     {
         return view('livewire.home');

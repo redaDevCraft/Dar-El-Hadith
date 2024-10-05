@@ -18,6 +18,7 @@ return new class extends Migration
             $table->json('images')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->integer('views')->default(0); // Add the views column here
             $table->timestamps();
 
         });

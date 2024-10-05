@@ -27,14 +27,14 @@
 
 
     <!-- blogs -->
-    <div class="  lg:m-8 m-6">
+    <div class="lg:m-8 m-6">
         <div dir="rtl"
-            class="animate-popUp flex flex-col lg:flex-row lg:flex-wrap gap-3  lg:space-y-0 space-y-4 lg:mr-[4%]">
+            class="animate-popUp flex flex-col lg:flex-row lg:flex-wrap gap-3 lg:space-y-0 space-y-4 lg:mr-[4%]">
             @foreach($news as $index => $additional)
             <div
-                class="lg:max-w-72 lg:w-1/4  bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                class="lg:max-w-72 lg:w-1/4 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
 
-                <a href="/news/{{ $additional->id }}" class=" ">
+                <a href="/news/{{ $additional->id }}" class="">
                     @php
                     $imagePath = !empty($additional->images) ? asset('storage/' . $additional->images[0]) :
                     asset('images/SmallWhiteLogo.svg');
@@ -44,18 +44,21 @@
                         src="{{ $imagePath }}" alt="" loading="lazy" data-fallback />
                 </a>
 
-
                 <div class="p-5">
                     <a href="/news/{{ $additional->id }}">
                         <h5
-                            class="mb-2 text-lg lg:text-xl  font-bold tracking-tight text-gray-900 dark:text-white text-ellipsis overflow-hidden line-clamp-1 ">
+                            class="mb-2 text-lg lg:text-xl font-bold tracking-tight text-gray-900 dark:text-white text-ellipsis overflow-hidden line-clamp-1">
                             {{ $additional->title }}
                         </h5>
                     </a>
                     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
                         {{ \Carbon\Carbon::parse($additional->created_at)->format('Y-m-d') }}
                     </p>
-                    <a href="/news/{{ $additional->id }}"
+                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                        عدد المشاهدات: {{ $additional->views }}
+                        <!-- Display the views count -->
+                    </p>
+                    <a href="#" wire:click.prevent="incrementViews({{ $additional->id }})"
                         class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-green-700 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-emerald-300 dark:bg-emerald-600 dark:hover:bg-emerald-700 dark:focus:ring-emerald-800">
                         اقرأ المزيد
                         <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
@@ -66,11 +69,9 @@
                     </a>
                 </div>
             </div>
-
-
-
             @endforeach
         </div>
+
         <div class="flex justify-center mt-4">
             @if ($hasMoreNews)
             <button wire:click="loadMore" wire:loading.attr="disabled"
@@ -95,8 +96,8 @@
             </button>
             @endif
         </div>
-
     </div>
+
 
 
 
