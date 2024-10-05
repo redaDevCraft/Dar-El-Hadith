@@ -67,6 +67,8 @@
                                 d="M1 5h12m0 0L9 1m4 4L9 9" />
                         </svg>
                     </a>
+
+
                 </div>
             </div>
             @endforeach
