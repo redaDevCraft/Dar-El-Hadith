@@ -62,7 +62,8 @@ class User extends Authenticatable implements FilamentUser
         return $this->hasMany(History::class);
     }
 
-    public function canAccessFilament(): bool
+        
+    public function canAccessPan(): bool
     {
         return str_ends_with($this->email, '@darelhadith.asso.dz');
     }
