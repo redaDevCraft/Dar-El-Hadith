@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     targetElement.scrollIntoView({
-                        behavior: 'smooth',
+                        // behavior: 'smooth',
                         block: 'start'
                     });
                 }
