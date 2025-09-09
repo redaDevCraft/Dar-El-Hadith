@@ -30,7 +30,7 @@ background-size : cover
                 <ul class="text-gray-600 font-semibold  space-y-5">
                     <li><a href="https://www.google.com/maps/place/%D9%85%D8%B3%D8%AC%D8%AF+%D8%AF%D8%A7%D8%B1+%D8%A7%D9%84%D8%AD%D8%AF%D9%8A%D8%AB%E2%80%AD/@34.8852211,-1.3112797,21z/data=!4m15!1m8!3m7!1s0xd78c9bc52475205:0x415977cd77999ab3!2sRue+Dar+El+Hadith,+Tlemcen!3b1!8m2!3d34.8851455!4d-1.3107365!16s%2Fg%2F12lk359yj!3m5!1s0xd78c90038eb7b57:0xdcc062910f33a391!8m2!3d34.8851802!4d-1.3113492!16s%2Fg%2F11vyrd7_z6?entry=ttu"
                             class="text-green-700 hover:underline"> دار الحديث على خرائط جوجل</a></li>
-                    <li><a href="#" class="text-gray-600 ">بريد إلكتروني: info@example.com</a></li>
+                    <li><a href="#" class="text-gray-600 ">بريد إلكتروني: support@darelhadith.asso.dz</a></li>
                     <li><a href="#" class="text-gray-600">رقم الهاتف: 044971382</a></li>
                 </ul>
             </div>
