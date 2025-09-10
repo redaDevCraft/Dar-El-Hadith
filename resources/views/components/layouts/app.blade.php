@@ -41,6 +41,8 @@
         display: none !important;
     }
     </style>
+    @livewireStyles
+
     @filamentStyles
     @vite('resources/css/app.css')
 </head>
@@ -65,9 +67,11 @@
     </footer>
 
     <!-- Scripts -->
+    @livewireScripts
+
     @filamentScripts
-<script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-@vite('resources/js/app.js')
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    @vite('resources/js/app.js')
 
 </body>
 
