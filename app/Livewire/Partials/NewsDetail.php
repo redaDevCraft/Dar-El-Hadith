@@ -18,6 +18,18 @@ class NewsDetail extends Component
 
     }
 
+    public function incrementViews($newsId)
+    {
+        $newsItem = News::find($newsId);
+
+        if ($newsItem) {
+            $newsItem->incrementViewCount();
+
+           return redirect()->route('news.show', ['id' => $newsItem->id]);
+        }
+    }
+
+
     public function render()
     {
         return view('livewire.partials.news-detail');

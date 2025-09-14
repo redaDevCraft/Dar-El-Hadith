@@ -38,7 +38,8 @@
                                     <p>{{ \Carbon\Carbon::parse($additional->created_at)->format('Y-m-d') }}</p>
 
                                     <div dir="auto">
-                                        <a id="read-more" href="/news/{{ $additional->id }}"
+                                        <a id="read-more" href="#"
+                                            wire:click.prevent="incrementViews({{ $additional->id }})"
                                             class="text-green-600 font-bold hover:underline">اقرأ المزيد</a>
                                     </div>
                                 </div>

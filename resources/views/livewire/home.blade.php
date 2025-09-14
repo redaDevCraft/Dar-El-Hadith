@@ -56,7 +56,6 @@
                     </p>
                     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
                         عدد المشاهدات: {{ $additional->views }}
-                        <!-- Display the views count -->
                     </p>
                     <a href="#" wire:click.prevent="incrementViews({{ $additional->id }})"
                         class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-green-700 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-emerald-300 dark:bg-emerald-600 dark:hover:bg-emerald-700 dark:focus:ring-emerald-800">
@@ -260,7 +259,8 @@
                             تم افتتاح المدرسة القرآنية لدار الحديث بقاعة النساء بالطابق السفلي في مارس 1996 من قبل
                             الجمعية
                             الدينية
-                            والثقافية والعلمية. تطوع الشيخ محمد بوكلي حسن، حفيد الشيخ بوشناق، لتعليم القرآن فيها. يعمل
+                            والثقافية والعلمية. تطوع الشيخ سيدي محمد عبد الوهاب بوكلي حسن، حفيد الشيخ بوشناق، لتعليم
+                            القرآن فيها. يعمل
                             محمد
                             الآن
                             محاسبًا، وشارك معه في التدريس عبد الحكيم مير والبشير مرابط وعبد الإله عراوي. تفتح المدرسة
