@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Open Graph Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .og-preview { border: 1px solid #ddd; padding: 15px; margin: 10px 0; border-radius: 8px; }
+        .og-image { max-width: 200px; height: auto; }
+        .meta-info { background: #f5f5f5; padding: 10px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <h1>Open Graph Meta Tags Test</h1>
+    
+    <div class="meta-info">
+        <h3>To test your Open Graph tags:</h3>
+        <ol>
+            <li>Start your Laravel server: <code>php artisan serve</code></li>
+            <li>Visit a news detail page: <code>http://localhost:8000/news/1</code></li>
+            <li>View page source (Ctrl+U) and look for meta tags</li>
+            <li>Use Facebook Debugger: <a href="https://developers.facebook.com/tools/debug/" target="_blank">https://developers.facebook.com/tools/debug/</a></li>
+        </ol>
+    </div>
+
+    <div class="og-preview">
+        <h3>Expected Meta Tags:</h3>
+        <pre>
+&lt;meta property="og:type" content="article"&gt;
+&lt;meta property="og:title" content="[News Title]"&gt;
+&lt;meta property="og:description" content="[News Description]"&gt;
+&lt;meta property="og:url" content="http://localhost:8000/news/1"&gt;
+&lt;meta property="og:site_name" content="دار الحديث"&gt;
+&lt;meta property="og:image" content="[Image URL]"&gt;
+        </pre>
+    </div>
+
+    <script>
+        function testMetaTags() {
+            const url = prompt('Enter your news detail URL:');
+            if (url) {
+                window.open(url, '_blank');
+            }
+        }
+    </script>
+    
+    <button onclick="testMetaTags()">Test URL</button>
+</body>
+</html>

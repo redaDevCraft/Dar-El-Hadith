@@ -1,3 +1,42 @@
+@section('title', $news->title . ' - دار الحديث')
+
+@section('meta')
+<meta property="og:type" content="article">
+<meta property="og:title" content="{{ $news->title }}">
+<meta property="og:description" content="{{ Str::limit(strip_tags($news->content), 160) }}">
+<meta property="og:url" content="{{ url()->current() }}">
+<meta property="og:site_name" content="دار الحديث">
+<meta property="og:locale" content="ar_DZ">
+@if($news->images && count($news->images) > 0)
+<meta property="og:image" content="{{ asset('storage/' . $news->images[0]) }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{{ $news->title }}">
+@else
+<meta property="og:image" content="{{ asset('images/SmallWhiteLogo.svg') }}">
+@endif
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ $news->title }}">
+<meta name="twitter:description" content="{{ Str::limit(strip_tags($news->content), 200) }}">
+@if($news->images && count($news->images) > 0)
+<meta name="twitter:image" content="{{ asset('storage/' . $news->images[0]) }}">
+@else
+<meta name="twitter:image" content="{{ asset('images/SmallWhiteLogo.svg') }}">
+@endif
+
+<!-- Article specific -->
+<meta property="article:published_time" content="{{ $news->created_at->toISOString() }}">
+<meta property="article:modified_time" content="{{ $news->updated_at->toISOString() }}">
+<meta property="article:section" content="أخبار">
+
+<!-- Additional SEO -->
+<meta name="description" content="{{ Str::limit(strip_tags($news->content), 160) }}">
+<meta name="keywords" content="دار الحديث, أخبار, {{ $news->title }}">
+<link rel="canonical" href="{{ url()->current() }}">
+@endsection
+
 <div class="m-6 tajawal-regular" id="main-div">
     <div class="row">
         <div>
