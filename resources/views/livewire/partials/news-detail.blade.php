@@ -7,7 +7,7 @@
 <meta property="og:url" content="{{ url()->current() }}">
 <meta property="og:site_name" content="دار الحديث">
 <meta property="og:locale" content="ar_DZ">
-@if($news->images && count($news->images) > 0)
+@if($news->images && is_array($news->images) && count($news->images) > 0)
 <meta property="og:image" content="{{ asset('storage/' . $news->images[0]) }}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -20,7 +20,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ $news->title }}">
 <meta name="twitter:description" content="{{ Str::limit(strip_tags($news->content), 200) }}">
-@if($news->images && count($news->images) > 0)
+@if($news->images && is_array($news->images) && count($news->images) > 0)
 <meta name="twitter:image" content="{{ asset('storage/' . $news->images[0]) }}">
 @else
 <meta name="twitter:image" content="{{ asset('images/SmallWhiteLogo.svg') }}">
