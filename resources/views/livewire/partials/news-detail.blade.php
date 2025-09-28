@@ -40,58 +40,7 @@
 
 <div class="m-6 tajawal-regular" id="main-div">
     <div class="row">
-        <div>
-            <div id="custom-controls-gallery" class="relative mx-[10%]  rounded-lg" data-carousel="slide">
-                <!-- Carousel wrapper -->
-                <div class="relative h-56 overflow-hidden rounded-lg lg:h-96">
-                    <!-- Carousel items -->
-                    @foreach($news->images as $image)
-                    <div class="hidden duration-700 ease-in-out " data-carousel-item>
-                        @if($news->images)
-                        <div class="mt-2 flex flex-wrap">
-                            <img src="{{ asset('storage/' . $image) }}" alt="{{ $news->title }}"
-                                class="absolute block max-w-full max-h-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
-                        </div>
-                        @elseif (!(isset($news->images)))
-                        <div class="mt-2 flex flex-wrap">
-                            <p>no image</p>
-                        </div>
-                        @endif
-                    </div>
-                    @endforeach
-                </div>
 
-                <!-- Carousel controls -->
-                <div class="flex justify-center items-center p-2 ">
-                    <button type="button"
-                        class="flex justify-center items-center me-4 h-full cursor-pointer group focus:outline-none"
-                        data-carousel-prev>
-                        <span
-                            class="text-gray-400 hover:text-gray-900 dark:hover:text-white group-focus:text-gray-900 dark:group-focus:text-white">
-                            <svg class="rtl:rotate-180 w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                fill="none" viewBox="0 0 14 10">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2" d="M13 5H1m0 0 4 4M1 5l4-4" />
-                            </svg>
-                            <span class="sr-only">Previous</span>
-                        </span>
-                    </button>
-                    <button type="button"
-                        class="flex justify-center items-center h-full cursor-pointer group focus:outline-none"
-                        data-carousel-next>
-                        <span
-                            class="text-gray-400 hover:text-gray-900 dark:hover:text-white group-focus:text-gray-900 dark:group-focus:text-white">
-                            <svg class="rtl:rotate-180 w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                fill="none" viewBox="0 0 14 10">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                            </svg>
-                            <span class="sr-only">Next</span>
-                        </span>
-                    </button>
-                </div>
-            </div>
-        </div>
 
         <!-- Article Header -->
         <div class="max-w-4xl mx-auto mt-8 px-4">
