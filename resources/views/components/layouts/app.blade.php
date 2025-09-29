@@ -7,10 +7,10 @@
     <meta name="csrf-token" content="{{ csrf_token() }}" />
 
     <!-- Primary Meta -->
-    <title>{{ config('app.name', 'Dar El Hadith') }}</title>
+    <!-- <title>{{ config('app.name', 'Dar El Hadith') }}</title>
     <meta name="application-name" content="{{ config('app.name') }}" />
     <meta name="description"
-        content="دار الحديث بتلمسان، مؤسسة تابعة لجمعية العلماء المسلمين الجزائريين، تضم مسجدًا، مدرسة قرآنية وتحضيرية، مكتبة، مسرح، وتساهم في بناء المجتمع عبر نشاطات علمية واجتماعية." />
+        content="دار الحديث بتلمسان، مؤسسة تابعة لجمعية العلماء المسلمين الجزائريين، تضم مسجدًا، مدرسة قرآنية وتحضيرية، مكتبة، مسرح، وتساهم في بناء المجتمع عبر نشاطات علمية واجتماعية." /> -->
 
     <!-- Open Graph / Facebook -->
     <!-- <meta property="og:type" content="website" />
