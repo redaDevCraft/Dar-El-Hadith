@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="csrf-token" content="{{ csrf_token() }}" />
+    @yield('meta')
 
     <!-- Primary Meta -->
     <!-- <title>{{ config('app.name', 'Dar El Hadith') }}</title>
@@ -20,11 +21,7 @@
     <meta property="og:image" content="{{ asset('images/OpenDay3.jpg') }}" />
     <meta property="og:url" content="{{ url()->current() }}" /> -->
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="{{ config('app.name') }}" />
-    <meta name="twitter:description" content="دار الحديث تلمسان - مؤسسة تعليمية وثقافية واجتماعية." />
-    <meta name="twitter:image" content="{{ asset('images/OpenDay3.jpg') }}" />
+
 
     <!-- Favicon & Theme -->
     <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon" />

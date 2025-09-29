@@ -1,5 +1,3 @@
-@section('title', $news->title . ' - دار الحديث')
-
 @section('meta')
 <meta property="og:type" content="article">
 <meta property="og:title" content="{{ isset($news->title) ? $news->title : 'عنوان غير متوفر' }}">
