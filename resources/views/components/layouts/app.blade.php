@@ -13,12 +13,12 @@
         content="دار الحديث بتلمسان، مؤسسة تابعة لجمعية العلماء المسلمين الجزائريين، تضم مسجدًا، مدرسة قرآنية وتحضيرية، مكتبة، مسرح، وتساهم في بناء المجتمع عبر نشاطات علمية واجتماعية." />
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
+    <!-- <meta property="og:type" content="website" />
     <meta property="og:title" content="{{ config('app.name') }}" />
     <meta property="og:description"
         content="مؤسسة علمية وثقافية بتلمسان، الجزائر. المسجد، المدرسة، المكتبة، المسرح، والنشاطات الاجتماعية." />
     <meta property="og:image" content="{{ asset('images/OpenDay3.jpg') }}" />
-    <meta property="og:url" content="{{ url()->current() }}" />
+    <meta property="og:url" content="{{ url()->current() }}" /> -->
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
