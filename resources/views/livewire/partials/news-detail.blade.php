@@ -2,7 +2,8 @@
 
 @section('meta')
 <meta property="og:type" content="article">
-<meta property="og:title" content="{{ $news->title }}">
+<meta property="og:title" content="{{ isset($news->title) ? $news->title : 'عنوان غير متوفر' }}">
+
 <meta property="og:description" content="{{ Str::limit(strip_tags($news->content), 160) }}">
 <meta property="og:url" content="{{ url()->current() }}">
 <meta property="og:site_name" content="دار الحديث">
@@ -47,6 +48,7 @@
             <!-- Article Title -->
             <h1 class="text-4xl lg:text-5xl font-bold text-green-900 text-center mb-6" id="news-title">
                 {{ $news->title }}
+
             </h1>
 
             <!-- Article Meta Info -->
@@ -54,6 +56,8 @@
                 <span>{{ \Carbon\Carbon::parse($news->created_at)->format('Y-m-d') }}</span>
                 <span>•</span>
                 <span>عدد المشاهدات: {{ $news->views ?? 0 }}</span>
+
+
             </div>
 
             <!-- Featured Image -->
