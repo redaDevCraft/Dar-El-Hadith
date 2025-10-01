@@ -30,7 +30,6 @@
 <meta property="article:section" content="أخبار">
 
 <!-- Additional SEO -->
-<meta name="description" content="{{ Str::limit(strip_tags($news->content), 160) }}">
 <meta name="keywords" content="دار الحديث, أخبار, {{ $news->title }}">
 <link rel="canonical" href="{{ url()->current() }}">
 @endsection
