@@ -23,9 +23,25 @@
 
 
 
-    <!-- Favicon & Theme -->
+    <!-- Standard Favicon -->
     <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon" />
-    <meta name="theme-color" content="#065f46" />
+
+    <!-- PNG Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon-16x16.png') }}">
+
+    <!-- Apple Touch Icon (iOS Home Screen) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-touch-icon.png') }}">
+
+    <!-- Android Chrome -->
+    <link rel="manifest" href="{{ asset('site.webmanifest') }}">
+
+    <!-- Safari Pinned Tab -->
+    <link rel="mask-icon" href="{{ asset('safari-pinned-tab.svg') }}" color="#065f46">
+
+    <meta name="msapplication-TileColor" content="#065f46">
+    <meta name="theme-color" content="#065f46">
+
 
     <!-- Preload / Prefetch -->
     <link rel="preload" href="{{ asset('images/OpenDay3.jpg') }}" as="image" />
